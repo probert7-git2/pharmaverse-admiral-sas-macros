@@ -1,0 +1,99 @@
+dataset,variable,origin,builder_macro,sas_port,admiral_template,admiral_function,key_params,by_vars,derivation_summary,prespec_analogue
+ADSL,TRT01P,Assigned,m_adsl_pva,(data step),ad_adsl.R,mutate,TRT01P=ARM,,Planned treatment from DM.ARM.,ad_adsl.R mutate TRT01P
+ADSL,TRT01A,Assigned,m_adsl_pva,(data step),ad_adsl.R,mutate,TRT01A=ACTARM,,Actual treatment from DM.ACTARM.,ad_adsl.R mutate TRT01A
+ADSL,TRTSDTM,Derived,m_adsl_pva,m_derive_vars_dtm,ad_adsl.R,derive_vars_dtm,prefix=EXST dtc=EXSTDTC hi=n time=first,STUDYID USUBJID,First exposure start datetime from EX then merge mode=first.,derive_vars_dtm + derive_vars_merged first
+ADSL,TRTSTMF,Derived,m_adsl_pva,m_derive_vars_dtm,ad_adsl.R,derive_vars_dtm,flag_imputation=auto time=first,STUDYID USUBJID,Time imputation flag from EX start. Date-only EX sets H.,derive_vars_dtm TRTSTMF
+ADSL,TRTEDTM,Derived,m_adsl_pva,m_derive_vars_dtm,ad_adsl.R,derive_vars_dtm,prefix=EXEN dtc=EXENDTC hi=n time=last,STUDYID USUBJID,Last exposure end datetime from EX then merge mode=last.,derive_vars_dtm + derive_vars_merged last
+ADSL,TRTETMF,Derived,m_adsl_pva,m_derive_vars_dtm,ad_adsl.R,derive_vars_dtm,flag_imputation=auto time=last,STUDYID USUBJID,Time imputation flag from EX end. Date-only EX sets H.,derive_vars_dtm TRTETMF
+ADSL,TRTSDT,Derived,m_adsl_pva,m_derive_vars_dtm_to_dt,ad_adsl.R,derive_vars_dtm_to_dt,source=TRTSDTM,,Date part of TRTSDTM.,derive_vars_dtm_to_dt
+ADSL,TRTEDT,Derived,m_adsl_pva,m_derive_vars_dtm_to_dt,ad_adsl.R,derive_vars_dtm_to_dt,source=TRTEDTM,,Date part of TRTEDTM.,derive_vars_dtm_to_dt
+ADSL,TRTDURD,Derived,m_adsl_pva,m_derive_vars_duration,ad_adsl.R,derive_vars_duration,start=TRTSDT end=TRTEDT add_one=Y,,Treatment duration in days plus one.,derive_vars_duration
+ADSL,DTHDT,Derived,m_adsl_pva,m_derive_vars_dt,ad_adsl.R,derive_vars_dt,prefix=DTH dtc=DTHDTC hi=M date=first,,Death date from DM.DTHDTC with month imputation first.,derive_vars_dt
+ADSL,DTHADY,Derived,m_adsl_pva,m_derive_vars_duration,ad_adsl.R,derive_vars_duration,start=TRTSDT end=DTHDT add_one=Y,,Relative day of death vs TRTSDT.,derive_vars_duration
+ADSL,LDDTHELD,Derived,m_adsl_pva,m_derive_vars_duration,ad_adsl.R,derive_vars_duration,start=TRTEDT end=DTHDT add_one=N,,Days from last dose to death.,derive_vars_duration
+ADSL,EOSDT,Derived,m_adsl_pva,m_derive_vars_dt,ad_adsl.R,derive_vars_dt,DSSTDTC then merge,,End of study date from DS when present.,derive_vars_dt + derive_vars_merged
+ADSL,EOSSTT,Assigned,m_adsl_pva,m_derive_vars_merged,ad_adsl.R,derive_vars_merged,DS disposition,,End of study status from DS.,derive_vars_merged
+ADSL,FRVDT,Derived,m_adsl_pva,m_derive_vars_merged,ad_adsl.R,derive_vars_merged,final retrieval visit,,Final retrieval visit date from DS when present.,derive_vars_merged
+ADSL,SAFFL,Assigned,m_adsl_pva,(data step),ad_adsl.R,derive_var_merged_exist_flag,SUPPDM or EX exposure,,Safety flag from SUPPDM when present else EX-derived exist flag.,derive_var_merged_exist_flag
+ADSL,ITTFL,Assigned,m_adsl_pva,m_supp_pop_flags,ad_adsl.R,(not in template),SUPPDM QNAM=ITTFL,,ITT from SUPPDM. Not set by ad_adsl.R. SAS extra kept.,CDISC pop flag (template does not set)
+ADSL,EFFFL,Assigned,m_adsl_pva,m_supp_pop_flags,ad_adsl.R,(not in template),SUPPDM QNAM=EFFFL,,Efficacy pop flag from SUPPDM. Not MITTFL. SAS extra kept.,CDISC pop flag (template does not set)
+ADSL,DTHCAUS,Predecessor,m_adsl_pva,m_derive_var_dthcaus,ad_adsl.R,derive_vars_extreme_event,DD PRCDTH,,Primary cause of death from DD when present.,derive_var_dthcaus
+ADSL,LSTALVDT,Derived,m_adsl_pva,m_derive_vars_dt,ad_adsl.R,derive_vars_extreme_event,AE start/end LB TRTEDT mode=last,,Date last known alive from AE/LB/TRTEDT. Flows onto BDS via remaining ADSL merge.,derive_vars_extreme_event LSTALVDT
+ADSL,BIRTHDT,Predecessor,m_adsl_pva,(omitted),ad_adsl.R,derive_vars_dt,BRTHDTC,,Omitted when DM has no BRTHDTC (privacy extract). PVA/pharmaversesdtm still has it.,template uses BRTHDTC when present
+ADAE,ASTDTM,Derived,m_adae_pva,m_derive_vars_dtm,ad_adae.R,derive_vars_dtm,prefix=AST dtc=AESTDTC hi=M min_dates=TRTSDT,,Analysis start datetime. PVA XPT may store date-scale. QC promotes copies only.,derive_vars_dtm
+ADAE,AENDTM,Derived,m_adae_pva,m_derive_vars_dtm,ad_adae.R,derive_vars_dtm,prefix=AEN dtc=AEENDTC hi=M time=last,,Analysis end datetime. Same PVA date-scale note as ASTDTM.,derive_vars_dtm
+ADAE,ASTDT,Derived,m_adae_pva,m_derive_vars_dtm_to_dt,ad_adae.R,derive_vars_dtm_to_dt,source=ASTDTM,,Date part of ASTDTM.,derive_vars_dtm_to_dt
+ADAE,AENDT,Derived,m_adae_pva,m_derive_vars_dtm_to_dt,ad_adae.R,derive_vars_dtm_to_dt,source=AENDTM,,Date part of AENDTM.,derive_vars_dtm_to_dt
+ADAE,ASTDY,Derived,m_adae_pva,m_derive_vars_dy,ad_adae.R,derive_vars_dy,reference=TRTSDT source=ASTDT,,Relative day of AE start.,derive_vars_dy
+ADAE,AENDY,Derived,m_adae_pva,m_derive_vars_dy,ad_adae.R,derive_vars_dy,reference=TRTSDT source=AENDT,,Relative day of AE end.,derive_vars_dy
+ADAE,ADURN,Derived,m_adae_pva,m_derive_vars_duration,ad_adae.R,derive_vars_duration,start=ASTDT end=AENDT,,AE duration numeric.,derive_vars_duration
+ADAE,LDOSEDTM,Derived,m_adae_pva,m_derive_vars_joined,ad_adae.R,derive_vars_joined,ex_single then join EXSTDTM<=ASTDTM mode=last,STUDYID USUBJID,Last daily dose datetime on or before AE onset.,derive_vars_joined
+ADAE,LDOSEDT,Derived,m_adae_pva,m_derive_vars_joined,ad_adae.R,derive_vars_joined,date part of LDOSEDTM,STUDYID USUBJID,Date of last dose prior to event.,derive_vars_joined
+ADAE,DOSEON,Derived,m_adae_pva,m_derive_vars_joined,ad_adae.R,derive_vars_joined,EXDOSE if LDOSEDT=ASTDT,STUDYID USUBJID,Dose at onset only when last dose date equals ASTDT.,derive_vars_joined
+ADAE,TRTEMFL,Derived,m_adae_pva,m_derive_var_trtemfl,ad_adae.R,derive_var_trtemfl,start=ASTDT end=AENDT trt=TRTSDT/TRTEDT end_window=30,,Treatment-emergent AE flag. CDISC name is TRTEMFL not AETRTEM.,derive_var_trtemfl
+ADAE,AETRTEM,Predecessor,m_adae_pva,m_supp_merge_by_idvar,ad_adae.R,(not on PVA),SUPPAE QNAM=AETRTEM,STUDYID USUBJID,Source TE flag from SUPPAE when present. PVA has none. Not the ADaM derivation.,SUPPAE predecessor
+ADAE,AOCCIFL,Derived,m_adae_pva,m_adm_restrict_extreme_flag,ad_adae.R,restrict_derivation(derive_var_extreme_flag),first most-severe TE AE,USUBJID,First most-severe treatment-emergent AE per subject.,restrict_derivation extreme_flag
+ADAE,ASEV,Assigned,m_adae_pva,(data step),ad_adae.R,mutate,ASEV=AESEV,,Analysis severity from AESEV.,mutate
+ADCM,ASTDTM,Derived,m_adcm_pva,m_derive_vars_dtm,ad_adcm.R,derive_vars_dtm,prefix=AST dtc=CMSTDTC hi=M min_dates=TRTSDT,,CM start datetime.,derive_vars_dtm
+ADCM,AENDTM,Derived,m_adcm_pva,m_derive_vars_dtm,ad_adcm.R,derive_vars_dtm,prefix=AEN dtc=CMENDTC hi=M max_dates=DTHDT EOSDT,,CM end datetime. SAS applies admiral max_dates. PVA year-end without EOS is POLICY on AENDT (1 row).,derive_vars_dtm max_dates
+ADCM,ASTDT,Derived,m_adcm_pva,m_derive_vars_dtm_to_dt,ad_adcm.R,derive_vars_dtm_to_dt,source=ASTDTM,,Date part of ASTDTM.,derive_vars_dtm_to_dt
+ADCM,AENDT,Derived,m_adcm_pva,m_derive_vars_dtm_to_dt,ad_adcm.R,derive_vars_dtm_to_dt,source=AENDTM,,Date part of AENDTM. Digest POLICY vs PVA year-end-without-EOS.,derive_vars_dtm_to_dt
+ADCM,ASTDY,Derived,m_adcm_pva,m_derive_vars_dy,ad_adcm.R,derive_vars_dy,reference=TRTSDT,,Relative day of CM start.,derive_vars_dy
+ADCM,AENDY,Derived,m_adcm_pva,m_derive_vars_dy,ad_adcm.R,derive_vars_dy,reference=TRTSDT,,Relative day of CM end.,derive_vars_dy
+ADCM,TRTEMFL,Assigned,m_adcm_pva,(omitted),ad_adcm.R,(not in template),AE OCCDS flag not used on CM,,Omitted. Later OCCDS TRTEMFL-on-CM post-dates PVA. Template uses ONTRTFL/PREFL/FUPFL.,do not derive TRTEMFL on CM
+ADCM,CMDOSE,Predecessor,m_adcm_pva,(data step),ad_adcm.R,(SDTM copy),CMDOSE,,SDTM dose kept. Later OCCDS AVAL/ADT guidance not ported.,SDTM predecessor
+ADVS,ADT,Derived,m_advs_admiral_mirror,m_adm_derive_vars_dt,ad_advs.R,derive_vars_dt,prefix=A dtc=VSDTC hi=n,,Analysis date from VSDTC. No ADTM on PVA ADVS.,derive_vars_dt
+ADVS,ADY,Derived,m_advs_admiral_mirror,m_adm_derive_vars_dy,ad_advs.R,derive_vars_dy,reference=TRTSDT source=ADT,,Relative day vs TRTSDT.,derive_vars_dy
+ADVS,PARAMCD,Assigned,m_advs_admiral_mirror,m_adm_derive_vars_merged_lookup,ad_advs.R,derive_vars_merged_lookup,VSTESTCD lookup,VSTESTCD,PARAMCD from template lookup. PARAM/PARAMN overlaid later.,derive_vars_merged_lookup
+ADVS,AVAL,Predecessor,m_advs_admiral_mirror,m_adm_advs_mutate_aval,ad_advs.R,mutate,AVAL from VSSTRESN,,Numeric result. PARAM includes unit so no AVALU.,mutate AVAL
+ADVS,MAP,Derived,m_advs_admiral_mirror,m_adm_derive_param_map,ad_advs.R,derive_param_map,PARAMCD=MAP,STUDYID USUBJID VISIT ADT VSTPT,Mean arterial pressure from SYSBP/DIABP.,derive_param_map
+ADVS,BSA,Derived,m_advs_admiral_mirror,m_adm_derive_param_bsa,ad_advs.R,derive_param_bsa,PARAMCD=BSA constant_by=USUBJID,STUDYID USUBJID VISIT ADT,Mosteller BSA.,derive_param_bsa
+ADVS,BMI,Derived,m_advs_admiral_mirror,m_adm_derive_param_bmi,ad_advs.R,derive_param_bmi,PARAMCD=BMI constant_by=USUBJID,STUDYID USUBJID VISIT ADT,BMI from HEIGHT/WEIGHT.,derive_param_bmi
+ADVS,AVISITN,Assigned,m_advs_admiral_mirror,m_adm_advs_mutate_timing,ad_advs.R,mutate,blank on SCREEN UNSCHED RETRIEVAL AMBUL,,Template blanks AVISITN on those visits. Filling VISITNUM would orphan vs PVA.,mutate timing
+ADVS,ONTRTFL,Derived,m_advs_admiral_mirror,m_adm_derive_var_ontrtfl,ad_advs.R,derive_var_ontrtfl,ref_end_window=0 filter_pre=Baseline,,On-treatment flag. Template default window 0.,derive_var_ontrtfl
+ADVS,ANRIND,Derived,m_advs_admiral_mirror,m_adm_derive_var_anrind,ad_advs.R,derive_var_anrind,ANRLO/ANRHI path,,Reference range indicator.,derive_var_anrind
+ADVS,ABLFL,Derived,m_advs_admiral_mirror,m_adm_restrict_extreme_flag,ad_advs.R,restrict_derivation(derive_var_extreme_flag),last ADT<=TRTSDT blank DTYPE,STUDYID USUBJID BASETYPE PARAMCD,Baseline flag.,restrict_derivation extreme_flag
+ADVS,BASE,Derived,m_advs_admiral_mirror,m_adm_derive_var_base,ad_advs.R,derive_var_base,source=AVAL filter=ABLFL=Y,STUDYID USUBJID PARAMCD BASETYPE,Baseline AVAL.,derive_var_base
+ADVS,BNRIND,Derived,m_advs_admiral_mirror,m_adm_derive_var_base,ad_advs.R,derive_var_base,source=ANRIND,STUDYID USUBJID PARAMCD BASETYPE,Baseline ANRIND.,derive_var_base
+ADVS,CHG,Derived,m_advs_admiral_mirror,m_adm_restrict_derive_var_chg,ad_advs.R,restrict_derivation(derive_var_chg),filter AVISITN>0,,Change from baseline only when AVISITN>0.,restrict_derivation chg
+ADVS,PCHG,Derived,m_advs_admiral_mirror,m_adm_restrict_derive_var_pchg,ad_advs.R,restrict_derivation(derive_var_pchg),filter AVISITN>0,,Percent change when AVISITN>0.,restrict_derivation pchg
+ADVS,ANL01FL,Derived,m_advs_admiral_mirror,m_adm_restrict_extreme_flag,ad_advs.R,restrict_derivation(derive_var_extreme_flag),last on-treatment,USUBJID PARAMCD AVISIT ATPT DTYPE,Analysis record flag.,restrict_derivation extreme_flag
+ADVS,ASEQ,Derived,m_advs_admiral_mirror,m_adm_derive_var_obs_number,ad_advs.R,derive_var_obs_number,order PARAMCD ADT AVISITN,STUDYID USUBJID,Observation sequence.,derive_var_obs_number
+ADEG,ADTM,Derived,m_adeg_admiral_mirror,m_adm_derive_vars_dtm,ad_adeg.R,derive_vars_dtm,prefix=A dtc=EGDTC,,Analysis datetime from EGDTC.,derive_vars_dtm
+ADEG,ADY,Derived,m_adeg_admiral_mirror,m_adm_derive_vars_dy,ad_adeg.R,derive_vars_dy,reference=TRTSDT source=ADTM,,Relative day from ADTM.,derive_vars_dy
+ADEG,PARAMCD,Assigned,m_adeg_admiral_mirror,m_adm_derive_vars_merged_lookup,ad_adeg.R,derive_vars_merged_lookup,EGTESTCD lookup,EGTESTCD,PARAMCD from template lookup. QTCBR/QTCFR already exist (R=Result).,derive_vars_merged_lookup
+ADEG,RRR,Derived,m_adeg_admiral_mirror,m_adm_derive_param_rr,ad_adeg.R,derive_param_rr,PARAMCD=RRR hr_code=HR,STUDYID USUBJID VISIT EGTPT ADTM,RR rederived from HR.,derive_param_rr
+ADEG,QTCBR,Derived,m_adeg_admiral_mirror,m_adm_derive_param_qtc,ad_adeg.R,derive_param_qtc,method=Bazett PARAMCD=QTCBR qt=QT rr=RR,STUDYID USUBJID VISIT EGTPT ADTM,Bazett QTc. RR in seconds. Not the ADEG FAIL cause.,derive_param_qtc Bazett
+ADEG,QTCFR,Derived,m_adeg_admiral_mirror,m_adm_derive_param_qtc,ad_adeg.R,derive_param_qtc,method=Fridericia PARAMCD=QTCFR,STUDYID USUBJID VISIT EGTPT ADTM,Fridericia QTc.,derive_param_qtc Fridericia
+ADEG,QTLCR,Derived,m_adeg_admiral_mirror,m_adm_derive_param_qtc,ad_adeg.R,derive_param_qtc,method=Sagie PARAMCD=QTLCR,STUDYID USUBJID VISIT EGTPT ADTM,Sagie QTc.,derive_param_qtc Sagie
+ADEG,ONTRTFL,Derived,m_adeg_admiral_mirror,m_adm_derive_var_ontrtfl,ad_adeg.R,derive_var_ontrtfl,window=30 filter_pre=Baseline,,On-treatment flag with 30-day window.,derive_var_ontrtfl
+ADEG,ANRIND,Derived,m_adeg_admiral_mirror,m_adm_derive_var_anrind,ad_adeg.R,derive_var_anrind,range_lookup merge,,Reference range indicator after range lookup merge.,derive_var_anrind
+ADEG,ABLFL,Derived,m_adeg_admiral_mirror,m_adm_restrict_extreme_flag,ad_adeg.R,restrict_derivation(derive_var_extreme_flag),last ADT<=TRTSDT,STUDYID USUBJID BASETYPE PARAMCD,Baseline flag.,restrict_derivation extreme_flag
+ADEG,BASE,Derived,m_adeg_admiral_mirror,m_adm_derive_var_base,ad_adeg.R,derive_var_base,source=AVAL,STUDYID USUBJID PARAMCD BASETYPE,Baseline AVAL.,derive_var_base
+ADEG,CHG,Derived,m_adeg_admiral_mirror,m_adm_restrict_derive_var_chg,ad_adeg.R,restrict_derivation(derive_var_chg),filter AVISITN>0,,Change from baseline when AVISITN>0.,restrict_derivation chg
+ADEG,EGSTRESU,Predecessor,m_adeg_admiral_mirror,(data step copy),ad_adeg.R,(SDTM copy verbatim),EGSTRESU,,Copied from EG. PVA pharmaversesdtm::eg vs Track A raw.eg differ (beats/min vs BEATS/MIN). FAIL on purpose.,SDTM predecessor do not recode
+ADEG,EGTPT,Predecessor,m_adeg_admiral_mirror,(data step copy),ad_adeg.R,(SDTM copy verbatim),EGTPT,,Copied from EG. PVA label vs SAS code. Same two-file FAIL.,SDTM predecessor do not recode
+ADLB,ADT,Derived,m_adlb_admiral_mirror,m_adm_derive_vars_dt,ad_adlb.R,derive_vars_dt,prefix=A dtc=LBDTC hi=n,,Analysis date from LBDTC.,derive_vars_dt
+ADLB,ADY,Derived,m_adlb_admiral_mirror,m_adm_derive_vars_dy,ad_adlb.R,derive_vars_dy,reference=TRTSDT source=ADT,,Relative day vs TRTSDT.,derive_vars_dy
+ADLB,PARAM,Assigned,m_adlb_admiral_mirror,m_adm_derive_vars_merged_lookup,ad_adlb.R,derive_vars_merged_lookup,LBTESTCD lookup includes unit,LBTESTCD,PARAM includes unit e.g. Hemoglobin (mmol/L). Template never creates AVALU.,derive_vars_merged_lookup
+ADLB,AVALU,Assigned,m_adlb_admiral_mirror,(omitted),ad_adlb.R,(not in template),no convert-unit step,,Dropped. PVA PARAM already has the unit.,do not create AVALU
+ADLB,BASO,Derived,m_adlb_admiral_mirror,m_adm_derive_param_wbc_abs,ad_adlb.R,derive_param_wbc_abs,diff=BASOLE type=fraction,STUDYID USUBJID VISIT ADT,Absolute basophils from WBC * fraction.,derive_param_wbc_abs
+ADLB,LYMPH,Derived,m_adlb_admiral_mirror,m_adm_derive_param_wbc_abs,ad_adlb.R,derive_param_wbc_abs,diff=LYMPHLE type=fraction,STUDYID USUBJID VISIT ADT,Absolute lymphocytes from WBC * fraction.,derive_param_wbc_abs
+ADLB,ONTRTFL,Derived,m_adlb_admiral_mirror,m_adm_derive_var_ontrtfl,ad_adlb.R,derive_var_ontrtfl,ref_end_window=0 filter_pre=Baseline,,On-treatment flag.,derive_var_ontrtfl
+ADLB,ANRIND,Derived,m_adlb_admiral_mirror,m_adm_derive_var_anrind,ad_adlb.R,derive_var_anrind,ANRLO/ANRHI,,Reference range indicator.,derive_var_anrind
+ADLB,ABLFL,Derived,m_adlb_admiral_mirror,m_adm_restrict_extreme_flag,ad_adlb.R,restrict_derivation(derive_var_extreme_flag),last ADT<=TRTSDT,STUDYID USUBJID BASETYPE PARAMCD,Baseline flag.,restrict_derivation extreme_flag
+ADLB,BASE,Derived,m_adlb_admiral_mirror,m_adm_derive_var_base,ad_adlb.R,derive_var_base,source=AVAL,STUDYID USUBJID PARAMCD BASETYPE,Baseline AVAL.,derive_var_base
+ADLB,BASEC,Derived,m_adlb_admiral_mirror,m_adm_derive_var_base,ad_adlb.R,derive_var_base,source=AVALC,STUDYID USUBJID PARAMCD BASETYPE,Character baseline.,derive_var_base
+ADLB,BNRIND,Derived,m_adlb_admiral_mirror,m_adm_derive_var_base,ad_adlb.R,derive_var_base,source=ANRIND,STUDYID USUBJID PARAMCD BASETYPE,Baseline ANRIND.,derive_var_base
+ADLB,CHG,Derived,m_adlb_admiral_mirror,m_adm_restrict_derive_var_chg,ad_adlb.R,restrict_derivation(derive_var_chg),filter AVISITN>0,,Change from baseline when AVISITN>0.,restrict_derivation chg
+ADLB,ATOXGR,Derived,m_adlb_admiral_mirror,m_adm_adlb_derive_atoxgr,ad_adlb.R,derive_var_atoxgr,CTCAE v4 extract_unit=scan(PARAM 2),,Toxicity grade. UNIT_CHECK uses text in parentheses. Hypokalemia G1=G2 worse-case G2. Hyponatremia no G2.,derive_var_atoxgr CTCv4
+ADLB,ATOXGRL,Derived,m_adlb_admiral_mirror,m_adm_adlb_derive_atoxgr,ad_adlb.R,derive_var_atoxgr,low direction,,Low-direction grade then combine.,derive_var_atoxgr
+ADLB,ATOXGRH,Derived,m_adlb_admiral_mirror,m_adm_adlb_derive_atoxgr,ad_adlb.R,derive_var_atoxgr,high direction,,High-direction grade then combine.,derive_var_atoxgr
+ADLB,BTOXGR,Derived,m_adlb_admiral_mirror,m_adm_derive_var_base,ad_adlb.R,derive_var_base,source=ATOXGR filter=ABLFL=Y,STUDYID USUBJID PARAMCD BASETYPE,Baseline toxicity grade.,derive_var_base
+ADLB,SHIFT1,Derived,m_adlb_admiral_mirror,m_adm_derive_var_shift,ad_adlb.R,derive_var_shift,BNRIND to ANRIND,,Range shift.,derive_var_shift
+ADLB,SHIFT2,Derived,m_adlb_admiral_mirror,m_adm_derive_var_shift,ad_adlb.R,derive_var_shift,BTOXGR to ATOXGR,,Toxicity shift. Blank when no ATOXDSCL/H.,derive_var_shift
+ADLB,R2BASE,Derived,m_adlb_admiral_mirror,m_adm_derive_var_analysis_ratio,ad_adlb.R,derive_var_analysis_ratio,AVAL/BASE,,Ratio to baseline.,derive_var_analysis_ratio
+ADLB,ANL01FL,Derived,m_adlb_admiral_mirror,m_adm_restrict_extreme_flag,ad_adlb.R,restrict_derivation(derive_var_extreme_flag),last on-treatment,USUBJID PARAMCD AVISIT,Analysis record flag.,restrict_derivation extreme_flag
+ADLB,LVOTFL,Derived,m_adlb_admiral_mirror,m_adm_restrict_extreme_flag,ad_adlb.R,restrict_derivation(derive_var_extreme_flag),last ONTRTFL=Y,USUBJID PARAMCD,Last value on treatment.,restrict_derivation extreme_flag
+ADLB,ASEQ,Derived,m_adlb_admiral_mirror,m_adm_derive_var_obs_number,ad_adlb.R,derive_var_obs_number,order PARAMCD ADT AVISITN,STUDYID USUBJID,Observation sequence.,derive_var_obs_number
+ADSL,_REMAINING,Derived,m_adsl_pva,m_adm_merge_remaining_adsl,ad_adsl.R,select(negate_vars),remaining ADSL onto BDS/OCCDS,STUDYID USUBJID,Template remaining-ADSL merge used by ADAE ADCM ADVS ADEG ADLB.,merge remaining ADSL
