@@ -1,0 +1,15 @@
+PREFIX,GRPNAME,GRPID,SCOPE,SCOPEN,SRCVAR,TERMCHAR,TERMNUM,COMMENT
+SMQ01,Haematuria (AESI),20000141,NARROW,2,AEDECOD,Haematuria,,Phase 1b/2 bladder cancer AESI - MedDRA SMQ-style narrow bleed signal
+SMQ01,Haematuria (AESI),20000141,NARROW,2,AEDECOD,Hematuria,,US spelling synonym for demo matching
+SMQ01,Haematuria (AESI),20000141,NARROW,2,AEDECOD,Blood urine present,,
+SMQ02,Acute renal failure (AESI),20000003,NARROW,2,AEDECOD,Acute kidney injury,,SMQ-style renal AESI common in uro-oncology
+SMQ02,Acute renal failure (AESI),20000003,NARROW,2,AEDECOD,Renal failure,,
+SMQ02,Acute renal failure (AESI),20000003,NARROW,2,AEDECOD,Renal impairment,,
+SMQ02,Acute renal failure (AESI),20000003,NARROW,2,AEDECOD,Blood creatinine increased,,
+CQ01,Urinary tract infection AESI,,,,AEDECOD,Urinary tract infection,,Custom query - infectious AESI for bladder / local therapy
+CQ01,Urinary tract infection AESI,,,,AEDECOD,Cystitis,,
+CQ01,Urinary tract infection AESI,,,,AEDECOD,Pyelonephritis,,
+CQ01,Urinary tract infection AESI,,,,AEDECOD,Urosepsis,,
+CQ02,Urinary retention AESI,,,,AEDECOD,Urinary retention,,Custom query - obstructive / local AESI in bladder cancer
+CQ02,Urinary retention AESI,,,,AEDECOD,Urinary obstruction,,
+CQ02,Urinary retention AESI,,,,AEDECOD,Bladder outlet obstruction,,

@@ -1,0 +1,22 @@
+test_id,suite,macro_under_test,description,input_pattern,expected_var,expected_value,notes
+GS-DT-01,DT,m_derive_vars_dt,Full ISO start date,AESTDTC=2020-06-15 hi=M di=first,ASTDT,6/15/2020,No imputation flag
+GS-DT-02,DT,m_derive_vars_dt,Missing day in start date,AESTDTC=2020-06-- hi=M di=first,ASTDT,6/1/2020,ASTDTF=D - NOT bladder last-day (GS-06)
+GS-DT-03,DT,m_derive_vars_dt,Year-only start date,AESTDTC=2020---- hi=M di=first,ASTDT,1/1/2020,ASTDTF=M - NOT bladder Dec 31
+GS-DT-04,DT,m_derive_vars_dt,Year-only with mid imputation,AESTDTC=2020---- hi=M di=mid,ASTDT,6/30/2020,ASTDTF=M mid-year rule
+GS-DT-05,DT,m_derive_vars_dt,Partial date no imputation,AESTDTC=2020-06-- hi=n,ASTDT,,R template safe_iso_date behavior
+GS-DT-06,DT,m_derive_vars_dt,Missing day end date last imputation,AESTDTC=2020-06-- hi=M di=last,ASTDT,6/30/2020,AE end pattern di=last
+GS-DTM-01,DTM,m_derive_vars_dtm,Uppercase M imputes month,AESTDTC=2020-06-- hi=M,ASTDT,6/1/2020,ASTDTF=D ASTTMF=H - locks M not minutes
+GS-DTM-02,DTM,m_derive_vars_dtm,Lowercase m no date imputation,AESTDTC=2020-06-- hi=m,ASTDT,,time-only hi on partial date
+GS-DTM-03,DTM,m_derive_vars_dtm,Lowercase m imputes time only,AESTDTC=2020-06-15 hi=m,ASTTMF,H,full date time imputed
+GS-EPOCH-01,EPOCH,m_derive_vars_dt,SAS 1960 epoch + ISO calendar,AESTDTC=2020-01-15 hi=n,ASTDT_ISO,1/15/2020,matches m_qc_compare yymmdd10 pattern
+GS-TE-01,TRTEMFL,m_derive_var_trtemfl,Missing treatment start,TRTSDT missing,TRTEMFL,,Blank when no TRTSDT
+GS-TE-02,TRTEMFL,m_derive_var_trtemfl,AE ends before treatment,AENDT before TRTSDT,TRTEMFL,,Not treatment emergent
+GS-TE-03,TRTEMFL,m_derive_var_trtemfl,Missing ASTDT on-treatment end,ASTDT missing AENDT on/after TRTSDT,TRTEMFL,Y,admiral missing-start rule
+GS-TE-04,TRTEMFL,m_derive_var_trtemfl,Start on treatment in window,ASTDT within TRTSDT to TRTEDT+30,TRTEMFL,Y,Standard TE case
+GS-TE-05,TRTEMFL,m_derive_var_trtemfl,Start on last day of TE window,ASTDT=01MAR2020=TRTEDT+30 leap,TRTEMFL,Y,Boundary inclusive leap-2020
+GS-TE-06,TRTEMFL,m_derive_var_trtemfl,Start after TE window,ASTDT=02MAR2020 after TRTEDT+30,TRTEMFL,,Follow-up exceeded
+GS-TE-07,TRTEMFL,m_derive_var_trtemfl,Pre-treatment with worsening,ASTDT before TRTSDT intensity increase,TRTEMFL,Y,initial_intensity/intensity params
+GS-AE-01,ADAE,m_adae2,Partial start TE rule 1 same month as TRTSDT,AESTDTC=2020-01-- full pipeline,ASTDT,1/1/2020,ASTDT=TRTSDT ASTDTF=D TRTEMFL=Y
+GS-AE-02,ADAE,m_adae2,Post-window AE full date,AESTDTC=2020-03-15 full pipeline,TRTEMFL,,Not TE after TRTEDT+30
+GS-AE-03,ADAE,m_adae2,Partial start TE rule 2 month in window,AESTDTC=2020-02-- full pipeline,ASTDT,3/1/2020,ASTDT=TRTEDT+30 ASTDTF=D TRTEMFL=Y
+GS-AE-04,ADAE,m_adae2,Partial start outside TE window,AESTDTC=2020-06-- full pipeline,ASTDT,,No first-of-month invent - missing ASTDT TRTEMFL blank

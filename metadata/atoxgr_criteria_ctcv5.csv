@@ -1,0 +1,28 @@
+TERM,DIRECTION,CRIT_TYPE,UNIT_CHECK,G1,G2,G3,G4,G1_BASE,G2_BASE,G3_BASE,G4_BASE,VAR_CHECK,COMMENT
+Alanine aminotransferase increased,H,ULN_BASE,,1,3,5,20,1.5,3,5,20,"AVAL, ANRHI, BASE, BNRIND",CTCAE v5 - normal baseline uses ULN; abnormal HIGH baseline uses BASE (G1 >=)
+Aspartate aminotransferase increased,H,ULN_BASE,,1,3,5,20,1.5,3,5,20,"AVAL, ANRHI, BASE, BNRIND",CTCAE v5
+Alkaline phosphatase increased,H,ULN_BASE,,1,2.5,5,20,2,2.5,5,20,"AVAL, ANRHI, BASE, BNRIND",CTCAE v5
+Blood bilirubin increased,H,ULN_BASE,,1,1.5,3,10,1,1.5,3,10,"AVAL, ANRHI, BASE, BNRIND",CTCAE v5 - abnormal G1 is > BASE
+GGT increased,H,ULN_BASE,,1,2.5,5,20,2,2.5,5,20,"AVAL, ANRHI, BASE, BNRIND",CTCAE v5
+Creatinine increased,H,CREAT,,1,1.5,3,6,1,1.5,3,6,"AVAL, ANRHI, BASE",CTCAE v5 - G2/G3 OR of ULN and BASE multiples
+CPK increased,H,ULN_MULT,,1,2.5,5,10,,,,,"AVAL, ANRHI",CTCAE v5
+Activated partial thromboplastin time prolonged,H,ULN_MULT,,1,1.5,2.5,,,,,,"AVAL, ANRHI",CTCAE v5 - no G4
+Lipase increased,H,ULN_MULT,,1,1.5,2,5,,,,,"AVAL, ANRHI",CTCAE v5 worst-case signs/symptoms
+Amylase increased,H,ULN_MULT,,1,1.5,2,5,,,,,"AVAL, ANRHI",CTCAE v5 worst-case
+Hyperkalemia,H,ABS_HIGH_ULN1,MMOL/L,5.5,5.5,6,7,,,,,"AVAL, ANRHI",G1 >ULN; G2+ absolute mmol/L
+Hypernatremia,H,ABS_HIGH_ULN1,MMOL/L,150,150,155,160,,,,,"AVAL, ANRHI",G1 >ULN
+Hypercalcemia,H,ABS_HIGH_ULN1,MMOL/L,2.9,2.9,3.1,3.4,,,,,"AVAL, ANRHI",Corrected Ca mmol/L
+Hemoglobin increased,H,HGB_HIGH,g/L,0,20,40,,,,,,,"AVAL, ANRHI",G1 >ULN; G2 >ULN+20; G3 >ULN+40 (g/L)
+Anemia,L,ABS_LOW_LLN,g/L,,100,80,,,,,,,,"AVAL, ANRLO",G1 <LLN; G2 <100; G3 <80 g/L
+Neutrophil count decreased,L,ABS_LOW_LLN,10^9/L,,1.5,1,0.5,,,,,"AVAL, ANRLO",SI units
+White blood cell decreased,L,ABS_LOW_LLN,10^9/L,,3,2,1,,,,,"AVAL, ANRLO",SI units
+Platelet count decreased,L,ABS_LOW_LLN,10^9/L,,75,50,25,,,,,"AVAL, ANRLO",SI units
+Lymphocyte count decreased,L,ABS_LOW_LLN,10^9/L,,0.8,0.5,0.2,,,,,"AVAL, ANRLO",CTCAE v5 SI
+Hypokalemia,L,ABS_LOW_LLN,MMOL/L,,3,2.5,2,,,,,"AVAL, ANRLO",CTCAE v5
+Hyponatremia,L,ABS_LOW_LLN,MMOL/L,,130,125,120,,,,,"AVAL, ANRLO",CTCAE v5
+Hypocalcemia,L,ABS_LOW_LLN,MMOL/L,,2,1.75,1.5,,,,,"AVAL, ANRLO",Corrected Ca mmol/L
+Hypoglycemia,L,ABS_LOW_LLN,MMOL/L,,3,2.2,1.7,,,,,"AVAL, ANRLO",approx CTCAE SI
+Hyperglycemia,H,ABS_HIGH_ULN1,MMOL/L,8.9,8.9,13.9,27.8,,,,,"AVAL, ANRHI",G1 >ULN pattern with absolute G2+
+INR increased,H,INR,,1.2,1.5,2.5,,,,,,"AVAL, BASE",Worst-case on anticoagulation
+Fibrinogen decreased,L,FIBRINOGEN,g/L,1,0.75,0.5,0.25,,,,,"AVAL, ANRLO, PCHG",CTCAE v5 with PCHG branches
+Blood lactate dehydrogenase increased,H,ULN_MULT,,1,,,,,,,"AVAL, ANRHI",G1 only >ULN
