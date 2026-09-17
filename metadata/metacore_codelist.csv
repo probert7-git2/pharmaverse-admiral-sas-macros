@@ -1,0 +1,27 @@
+code_id,name,codes,type
+CL.AECAUS,AECAUS,,code_decode
+CL.AGEU,AGEU,,code_decode
+CL.ARM,ARM,,code_decode
+CL.ARMCD,ARMCD,,code_decode
+CL.COUNTRY,COUNTRY,,code_decode
+CL.EPOCH,EPOCH,,code_decode
+CL.ETHNIC,ETHNIC,,code_decode
+CL.EXDOSEU,EXDOSEU,,code_decode
+CL.EXDOSFRM,EXDOSFRM,,code_decode
+CL.EXFREQ,EXFREQ,,code_decode
+CL.EXROUTE,EXROUTE,,code_decode
+CL.EXTRT,EXTRT,,code_decode
+CL.OUT,OUT,,code_decode
+CL.QEVAL,QEVAL,,code_decode
+CL.RACE,RACE,,code_decode
+CL.SEV,SEV,,code_decode
+CL.SEX,SEX,,code_decode
+CL.SUPPAE.QNAM,SUPPAE.QNAM,,code_decode
+CL.SUPPDM.QNAM,SUPPDM.QNAM,,code_decode
+CL.VISIT,VISIT,,code_decode
+CL.VISITNUM,VISITNUM,,code_decode
+CL.YN,YN,,code_decode
+CL.Y_BLANK,Y_BLANK,,code_decode
+CL.AEDICT,ADVERSE EVENT DICTIONARY,,external_library
+CL.DRUGDICT,DRUG DICTIONARY,,external_library
+CL.MHDICT,MEDICAL HISTORY DICTIONARY,,external_library

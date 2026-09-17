@@ -1,0 +1,54 @@
+dataset,variable,core,origin,predecessor_vars,source_domain,source_vars,builder_macro,port_macro,derivation_summary,regulatory_note
+ADSL,TRTSDTM,Expected,Derived,EXSTDTC EXSTDTC,EX,EXSTDTC EXENDTC EXDOSE EXTRT EXSEQ,m_adsl2,m_derive_vars_dtm,First treatment start datetime from EX with time imputation first.,Aligns with admiral ad_adsl.R first exposure rule.
+ADSL,TRTEDTM,Expected,Derived,EXENDTC EXENDTM,EX,EXENDTC EXSTDTC EXDOSE EXTRT EXSEQ,m_adsl2,m_derive_vars_dtm,Last treatment end datetime from EX with time imputation last.,Treatment end for exposure window derivations.
+ADSL,TRTSDT,Expected,Derived,TRTSDTM,EX,EXSTDTC,m_adsl2,m_derive_vars_dtm_to_dt,Calendar date part of TRTSDTM.,Used as reference date for ADY across ADaM.
+ADSL,TRTEDT,Expected,Derived,TRTEDTM,EX,EXENDTC,m_adsl2,m_derive_vars_dtm_to_dt,Calendar date part of TRTEDTM.,Used in TRTEMFL and ONTRTFL windows.
+ADSL,TRTDURD,Permissible,Derived,TRTSDT TRTEDT,ADSL,TRTSDT TRTEDT,m_adsl2,m_derive_vars_duration,Duration in days between TRTSDT and TRTEDT plus one.,Population summary variable.
+ADSL,DTHDT,Permissible,Predecessor,DM.DTHDTC,DM,DTHDTC,m_adsl2,m_derive_vars_dt,Death date from DM when complete DTC present.,May differ from ref if imputation rules differ.
+ADSL,DTHADY,Permissible,Derived,DTHDT TRTSDT,ADSL,DTHDT TRTSDT,m_adsl2,m_derive_vars_dy,Relative day of death vs TRTSDT.,Safety population review.
+ADSL,LDDTHELD,Permissible,Derived,DTHDT TRTEDT,ADSL,DTHDT TRTEDT,m_adsl2,m_derive_vars_duration,Days from last dose to death.,Compare masked vs pharmaverse ref when DD differs.
+ADSL,SAFFL,Expected,Assigned,SUPPDM QNAM SAFFL or EX exposure,DM SUPPDM,SAFFL QVAL EX,m_adsl2,m_supp_pop_flags,Safety population flag from SUPPDM when present else EX-derived fallback.,Document SUPPDM source in define.xml.
+ADSL,ITTFL,Expected,Assigned,SUPPDM QNAM ITTFL,DM SUPPDM,ITTFL QVAL,m_adsl2,m_supp_pop_flags,Intent-to-treat flag from SUPPDM when available.,Key analysis population.
+ADSL,DTHCAUS,Permissible,Predecessor,DD.DDSTRESC,DD,DDTESTCD DDSTRESC DDSEQ,m_adsl2,m_derive_var_dthcaus,Primary cause of death from DD PRCDTH test.,Mask in QC when DD is constructed locally.
+ADSL,DTHDOM,Permissible,Assigned,DTHCAUS,DD,DDSTRESC,m_adsl2,(data step),Domain of primary cause set to AE when DD present.,Pharmaverseadam alignment.
+ADAE,ASTDT,Expected,Derived,AE.AESTDTC,AE,AESTDTC,m_adae2,m_derive_vars_dt,Analysis start date from AE start DTC without date imputation.,FDA traceability to AE.AESTDTC.
+ADAE,ASTDTM,Permissible,Derived,AE.AESTDTC,AE,AESTDTC,m_adae2,m_derive_vars_dtm,Analysis start datetime with M-level imputation on AE.,Differs from template path using date-only.
+ADAE,AENDT,Expected,Derived,AE.AEENDTC,AE,AEENDTC,m_adae2,m_derive_vars_dt,Analysis end date from AE end DTC.,Pairs with ASTDT for duration.
+ADAE,ASTDY,Expected,Derived,ASTDT TRTSDT,ADAE ASTDT,ASTDT TRTSDT,m_adae2,m_derive_vars_dy,Relative day of AE start vs TRTSDT.,Standard ADaM ADY rule.
+ADAE,TRTEMFL,Expected,Derived,ASTDT TRTSDT TRTEDT,AE ADSL,ASTDT TRTSDT TRTEDT,m_adae2,m_derive_var_trtemfl,Treatment-emergent flag per admiral window plus end offset.,SAP-defined window must match submission.
+ADAE,LDOSEDT,Permissible,Derived,EX EXSTDT AESTDT,EX AE,EXSTDT EXDOSE AESTDT,m_adae2,m_derive_vars_joined,Last exposure start on or before AE start (mode=last).,Critical for dose-at-onset traceability.
+ADAE,DOSEON,Permissible,Derived,LDOSE EXDOSE,EX,EXDOSE,m_adae2,m_derive_vars_joined,Dose from selected last exposure record.,Linked to LDOSEDT row.
+ADAE,LDOS_RTE,Permissible,Derived,EX.EXROUTE ASTDT,EX AE,EXROUTE EXSTDT,m_adae2,m_derive_vars_joined,Route of administration for last dose on or before AE start.,Useful for phase-1 onco mixed-route / dose-level review.
+ADAE,EXROUTE,Permissible,Predecessor,EX.EXROUTE,EX,EXROUTE,m_adae2,m_derive_vars_joined,SDTM EXROUTE from the same last-dose record as LDOS_RTE.,Unchanged SDTM predecessor name.
+ADAE,AESEV,Permissible,Predecessor,AE.AESEV,AE,AESEV,m_adae2,(data step),SDTM severity kept unchanged alongside analysis ASEV.,CDISC predecessor naming.
+ADAE,AEREL,Permissible,Predecessor,AE.AEREL,AE,AEREL,m_adae2,(data step),SDTM causality kept unchanged alongside analysis AREL.,CDISC predecessor naming.
+ADAE,AETRTEM,Permissible,Predecessor,SUPPAE QNAM AETRTEM,AE SUPPAE,QNAM QVAL IDVAR IDVARVAL,m_adae2,m_supp_merge_by_idvar,Copied from SDTM SUPPAE QNAM=AETRTEM - source TE flag for QC - not the same as ADaM TRTEMFL.,SUPPAE uses AETRTEM not TRTEMFL. Metacore where-clause citing TRTEMFL is a pilot quirk. TRTEMFL is derived separately.
+ADTTE,PARAMCD,Expected,Assigned,(constant),ADTTE,(constant TTAE),m_adttee2,m_derive_param_tte,Parameter code for time-to-first TE AE.,Custom PARAMCD for template TTE view.
+ADTTE,AVAL,Expected,Derived,STARTDT ADT,AE ADSL,ASTDT TRTSDT TRTEDT,m_adttee2,m_derive_param_tte,Time-to-event days from STARTDT to ADT plus one.,Censoring uses TRTEDT when no event.
+ADTTE,CNSR,Expected,Derived,EVNTDT,AE,TRTEMFL ASTDT,m_adttee2,m_derive_param_tte,Censor indicator 0=event 1=no TE AE.,Standard TTE coding.
+ADVS,AVAL,Expected,Predecessor,VS.VSSTRESN,VS,VSSTRESN VSTESTCD,m_advs2,(data step),Numeric result from VS standard result.,BDS analysis value.
+ADVS,BASE,Expected,Derived,AVAL ABLFL,VS ADVS,AVAL ABLFL,m_advs2,m_derive_var_base,Last baseline AVAL within USUBJID PARAMCD.,Baseline window ADT less than TRTSDT.
+ADVS,CHG,Expected,Derived,AVAL BASE,ADVS,AVAL BASE,m_advs2,m_derive_var_chg,Post-baseline value minus baseline.,Standard change from baseline.
+ADVS,PCHG,Permissible,Derived,CHG BASE,ADVS,CHG BASE,m_advs2,m_derive_var_pchg,Percent change from baseline when BASE non-zero.,Optional summary statistic.
+ADVS,ABLFL,Expected,Derived,ADT TRTSDT,VS ADSL,ADT TRTSDT,m_advs2,(data step),Y when assessment before TRTSDT.,Baseline record identification.
+ADVS,ONTRTFL,Permissible,Derived,ADT TRTSDT TRTEDT,VS ADSL,ADT TRTSDT TRTEDT,m_advs2,m_derive_var_ontrtfl,On-treatment flag per admiral ONTRTFL rules.,Not in R template ref — expect PROC COMPARE var diffs if ref lacks it.
+ADEG,PARAMCD,Expected,Derived,EG.EGTESTCD,EG,EGTESTCD EGTEST,m_adeg2,(data step),Mapped from EGTESTCD via param lookup.,Fallback to EGTESTCD when unmapped.
+ADEG,BASE,Expected,Derived,AVAL ABLFL,EG ADEG,AVAL ABLFL,m_adeg2,m_derive_var_base,Last baseline AVAL within USUBJID PARAMCD.,Same BDS pattern as ADVS.
+ADEG,CHG,Expected,Derived,AVAL BASE,EG ADEG,AVAL BASE,m_adeg2,m_derive_var_chg,AVAL minus BASE.,ECG change from baseline.
+ADCM,ASTDT,Expected,Derived,CM.CMSTDTC,CM,CMSTDTC,m_adcm2,m_derive_vars_dt,Analysis start date from CM start.,Occurrence analysis start.
+ADCM,TRTEMFL,Expected,Derived,ASTDT TRTSDT TRTEDT,CM ADSL,ASTDT TRTSDT TRTEDT,m_adcm2,m_derive_var_trtemfl,Treatment-emergent conmed flag.,Window must match SAP.
+ADCM,ASTDY,Expected,Derived,ASTDT TRTSDT,ADCM,ASTDT TRTSDT,m_adcm2,m_derive_vars_dy,Relative day of CM start.,Standard ADY.
+ADLB,BASE,Expected,Derived,AVAL ABLFL,LB ADLB,AVAL ABLFL,m_adlb,m_derive_var_base,Last baseline lab value by PARAMCD.,Only built when raw.lb present.
+ADLB,BASEC,Expected,Derived,AVALC ABLFL,LB ADLB,AVALC ABLFL,m_adlb,m_derive_var_base,Character baseline from first ABLFL=Y row by ADT LBSEQ.,Pairs with numeric BASE.
+ADLB,BNRIND,Expected,Derived,ANRIND ABLFL,LB ADLB,ANRIND ABLFL,m_adlb,m_derive_var_base,Baseline reference-range indicator from first ABLFL=Y ANRIND.,Input to SHIFT and ATOXGR.
+ADLB,ANRIND,Expected,Predecessor,LB.LBNRIND,LB,LBNRIND,m_adlb,(data step),Copied from SDTM LBNRIND.,Analysis reference-range indicator.
+ADLB,SHIFT,Expected,Derived,BNRIND ANRIND,LB ADLB,BNRIND ANRIND,m_adlb,m_derive_var_shift,Baseline-to-analysis range shift via cat of BNRIND or space then to then ANRIND or space.,Matches Track A gold paste coalesce BNRIND/ANRIND with space.
+ADLB,ATOXGR,Permissible,Derived,AVAL ANRLO ANRHI BASE BNRIND PCHG AVALU ATOXDSCL ATOXDSCH,LB ADLB,AVAL ANRLO ANRHI BASE BNRIND,m_adlb,m_derive_var_atoxgr,CTCAE v5 toxicity grade via PARAM map and structured criteria meta.,Aligned with admiral derive_var_atoxgr / atoxgr_criteria_ctcv5 intent.
+ADLB,ATOXDSCL,Permissible,Assigned,PARAMCD,LB metadata,PARAMCD,m_adlb,m_map_atoxdsc,Low-direction CTCAE term description from PARAMCD map.,Required input to directional low grading.
+ADLB,ATOXDSCH,Permissible,Assigned,PARAMCD,LB metadata,PARAMCD,m_adlb,m_map_atoxdsc,High-direction CTCAE term description from PARAMCD map.,Required input to directional high grading.
+ADAE,AESIFL,Permissible,Derived,SMQ/CQ NAM vars,AE queries,AEDECOD,m_adae2,m_derive_vars_query,Y when any configured AESI query matches the AE.,Study-defined AESI basket flag.
+ADAE,SMQ01NAM,Permissible,Derived,AEDECOD,AE queries,AEDECOD,m_adae2,m_derive_vars_query,Haematuria AESI SMQ-style query name.,Example Phase 1b/2 bladder cancer AESI.
+ADAE,CQ01NAM,Permissible,Derived,AEDECOD,AE queries,AEDECOD,m_adae2,m_derive_vars_query,Urinary tract infection custom AESI query name.,Example custom query (CQ).
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,

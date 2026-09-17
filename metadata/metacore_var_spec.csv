@@ -1,0 +1,92 @@
+variable,type,length,label,format,common
+STUDYID,text,12,Study Identifier,NA,NA
+DOMAIN,text,2,Domain Abbreviation,NA,NA
+USUBJID,text,11,Unique Subject Identifier,NA,NA
+SUBJID,text,4,Subject Identifier for the Study,NA,NA
+RFSTDTC,date,10,Subject Reference Start Date/Time,NA,NA
+RFENDTC,date,10,Subject Reference End Date/Time,NA,NA
+RFXSTDTC,datetime,20,Date/Time of First Study Treatment,NA,NA
+RFXENDTC,datetime,20,Date/Time of Last Study Treatment,NA,NA
+RFICDTC,datetime,20,Date/Time of Informed Consent,NA,NA
+RFPENDTC,datetime,20,Date/Time of End of Participation,NA,NA
+DTHDTC,datetime,20,Date/Time of Death,NA,NA
+DTHFL,text,1,Subject Death Flag,NA,NA
+SITEID,text,3,Study Site Identifier,NA,NA
+AGE,integer,8,Age,NA,NA
+AGEU,text,6,Age Units,NA,NA
+SEX,text,1,Sex,NA,NA
+RACE,text,78,Race,NA,NA
+ETHNIC,text,25,Ethnicity,NA,NA
+ARMCD,text,8,Planned Arm Code,NA,NA
+ARM,text,20,Description of Planned Arm,NA,NA
+ACTARMCD,text,8,Actual Arm Code,NA,NA
+ACTARM,text,20,Description of Actual Arm,NA,NA
+COUNTRY,text,3,Country,NA,NA
+DMDTC,date,10,Date/Time of Collection,NA,NA
+DMDY,integer,8,Study Day of Collection,NA,NA
+EXSEQ,integer,8,Sequence Number,NA,NA
+EXTRT,text,10,Name of  Treatment,NA,NA
+EXDOSE,integer,8,Dose,NA,NA
+EXDOSU,text,2,Dose Units,NA,NA
+EXDOSFRM,text,5,Dose Form,NA,NA
+EXDOSFRQ,text,2,Dosing Frequency per Interval,NA,NA
+EXROUTE,text,11,Route of Administration,NA,NA
+VISITNUM,float,8,Visit Number,8.1,NA
+VISIT,text,19,Visit Name,NA,NA
+VISITDY,integer,8,Planned Study Day of Visit,NA,NA
+EPOCH,text,9,Epoch,NA,NA
+EXSTDTC,date,10,Start Date/Time of Treatment,NA,NA
+EXENDTC,date,10,End Date/Time of Treatment,NA,NA
+EXSTDY,integer,8,Study Day of Start of Treatment,NA,NA
+EXENDY,integer,8,Study Day of End of Treatment,NA,NA
+AESEQ,integer,8,Sequence Number,NA,NA
+AESPID,text,3,Sponsor-Defined Identifier,NA,NA
+AETERM,text,200,Reported Term for the Adverse Event,NA,NA
+AELLT,text,100,Lowest Level Term,NA,NA
+AELLTCD,integer,8,Lowest Level Term Code,NA,NA
+AEDECOD,text,200,Dictionary-Derived Term,NA,NA
+AEPTCD,integer,8,Preferred Term Code,NA,NA
+AEHLT,text,100,High Level Term,NA,NA
+AEHLTCD,integer,8,High Level Term Code,NA,NA
+AEHLGT,text,100,High Level Group Term,NA,NA
+AEHLGTCD,integer,8,High Level Group Term Code,NA,NA
+AEBODSYS,text,67,Body System or Organ Class,NA,NA
+AEBDSYCD,integer,8,Body System or Organ Class Code,NA,NA
+AESOC,text,100,Primary System Organ Class,NA,NA
+AESOCCD,integer,8,Primary System Organ Class Code,NA,NA
+AESEV,text,8,Severity/Intensity,NA,NA
+AESER,text,1,Serious Event,NA,NA
+AEACN,text,30,Action Taken with Study Treatment,NA,NA
+AEREL,text,8,Causality,NA,NA
+AEOUT,text,200,Outcome of Adverse Event,NA,NA
+AESCAN,text,1,Involves Cancer,NA,NA
+AESCONG,text,1,Congenital Anomaly or Birth Defect,NA,NA
+AESDISAB,text,1,Persist or Signif Disability/Incapacity,NA,NA
+AESDTH,text,1,Results in Death,NA,NA
+AESHOSP,text,1,Requires or Prolongs Hospitalization,NA,NA
+AESLIFE,text,1,Is Life Threatening,NA,NA
+AESOD,text,1,Occurred with Overdose,NA,NA
+AEDTC,date,10,Date/Time of Collection,NA,NA
+AESTDTC,date,10,Start Date/Time of Adverse Event,NA,NA
+AEENDTC,date,10,End Date/Time of Adverse Event,NA,NA
+AEDY,integer,8,Study Day of Visit/Collection/Exam,NA,NA
+AESTDY,integer,8,Study Day of Start of Adverse Event,NA,NA
+AEENDY,integer,8,Study Day of End of Adverse Event,NA,NA
+RDOMAIN,text,2,Related Domain Abbreviation,NA,NA
+IDVAR,text,8,Identifying Variable,NA,NA
+IDVARVAL,text,200,Identifying Variable Value,NA,NA
+QNAM,text,8,Qualifier Variable Name,NA,NA
+QLABEL,text,40,Qualifier Variable Label,NA,NA
+QVAL,text,200,Data Value,NA,NA
+QORIG,text,200,Origin,NA,NA
+QEVAL,text,200,Evaluator,NA,NA
+AETRTEM,text,20,TREATMENT EMERGENT FLAG,NA,NA
+COMPLT16,text,20,Completers of Week 16 Population Flag,NA,NA
+COMPLT24,text,20,Completers of Week 24 Population Flag,NA,NA
+COMPLT8,text,20,Completers of Week 8 Population Flag,NA,NA
+EFFICACY,text,20,Efficacy Population Flag,NA,NA
+ITT,text,20,Intent to Treat Population Flag,NA,NA
+SAFETY,text,20,Safety Population Flag,NA,NA
+ENTCRIT,text,20,PROTOCOL ENTRY CRITERIA NOT MET,NA,NA
+LBTMSHI,text,20,LAB RESULT/UPPER LIMIT OF NORMAL,NA,NA
+ENDPOINT,text,20,ENDPOINT VALUE FLAG,NA,NA

@@ -1,0 +1,7 @@
+dataset,variable,code_id,name,codes,type
+SUPPAE,QNAM,CL.SUPPAE.QNAM,SUPPAE.QNAM,,code_decode
+SUPPAE,QEVAL,CL.QEVAL,QEVAL,,code_decode
+SUPPDM,QNAM,CL.SUPPDM.QNAM,SUPPDM.QNAM,,code_decode
+SUPPDM,QEVAL,CL.QEVAL,QEVAL,,code_decode
+SUPPAE,QVAL,CL.YN,YN,,code_decode
+SUPPDM,QVAL,CL.Y_BLANK,Y_BLANK,,code_decode
