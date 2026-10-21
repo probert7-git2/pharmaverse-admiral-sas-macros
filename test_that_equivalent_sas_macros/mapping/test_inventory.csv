@@ -1,0 +1,1079 @@
+r_file,r_test_name,r_line_start,r_line_end,r_category,r_expectation_type,r_function_under_test,porting_tier,sas_port_status,sas_notes
+test-admiral_df.R,as_admiral_df Test 1: adds the admiral_df class to a data frame,3,15,core_infrastructure,expect_equal,as_admiral_df,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_df.R,as_admiral_df Test 2: is idempotent when the class is already present,18,29,core_infrastructure,expect_equal,as_admiral_df,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_df.R,as_admiral_df Test 4: returns NULL unchanged,32,34,core_infrastructure,expect_null,as_admiral_df,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,get_admiral_option Test 1: get works,3,5,core_infrastructure,expect_equal,get_admiral_option,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,get_admiral_option Test 2: common typo gives error to select available options,8,13,core_infrastructure,expect_snapshot,get_admiral_option,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,get_admiral_option Test 3: non-character argument triggers assertion error,16,22,core_infrastructure,expect_error,get_admiral_option,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 4: setting subject_keys,26,31,core_infrastructure,expect_equal,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 5: error if subject_keys is invalid,34,43,core_infrastructure,expect_error,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 6: error if signif_digits is invalid,46,55,core_infrastructure,expect_error,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 7: setting signif_digits,58,63,core_infrastructure,expect_equal,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 8: setting save_memory,66,71,core_infrastructure,expect_equal,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-admiral_options.R,set_admiral_options Test 9: error if save_memory is invalid,74,79,core_infrastructure,expect_error,set_admiral_options,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 1:  Test that call_derivation generates expected summary,3,70,core_infrastructure,expect_dfs_equal,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 2: Test that call_derivation generates expected imputation,74,106,core_infrastructure,expect_dfs_equal,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 3: Test that Error is thrown if ... has no arguments,110,125,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 4: Error is thrown if ... arguments are not properly named,129,146,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 5: Error is thrown if params is empty,150,167,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 6: Error is thrown if passed params are not properly named,171,188,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 7: Error is thrown if `...` arguments are not properly named,192,209,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 8: Error is thrown if duplicate parameters,213,218,core_infrastructure,expect_snapshot,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-call_derivation.R,call_derivation Test 9: Test new environment when variable_env != fixed_env,222,253,core_infrastructure,expect_dfs_equal,call_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-compute_age_years.R,compute_age_years Test 1: compute_age_years() works when `age_unit` is a string,2,15,compute,expect_equal,compute_age_years,1,todo,
+test-compute_age_years.R,compute_age_years Test 2: compute_age_years() works when `age_unit` is a vector,18,31,compute,expect_equal,compute_age_years,1,todo,
+test-compute_age_years.R,compute_age_years Test 3: Error is issued when `age_unit` has invalid length,34,44,compute,expect_snapshot,compute_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-compute_age_years.R,compute_age_years Test 4: `age_unit` processes values in a case insensitive manner,47,60,compute,expect_equal,compute_age_years,1,todo,
+test-compute_duration.R,"compute_duration Test 1: Default duration, i.e., relative day",4,12,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 2: Fractional duration,15,25,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 3: Age in years,28,39,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 4: Age in YRS,42,53,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 5: Age in months,56,67,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 6: Age in MOS,70,81,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 7: Age in wks,84,95,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 8: Age in wks,98,109,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 9: Duration in hours,112,123,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 10: Duration in H,126,137,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 11: Duration in minutes (minutes option),141,152,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 12: Duration in minutes (min option),155,166,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 13: Duration in seconds (seconds option),170,181,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 14: Duration in seconds (sec option),185,196,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 15: Duration (instead of interval),200,222,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 16: Interval (instead of duration),225,247,compute,expect_equal,compute_duration,1,todo,
+test-compute_duration.R,compute_duration Test 17: Interval with duration/interval invariant units,250,284,compute,expect_equal,compute_duration,1,todo,
+test-compute_framingham.R,"compute_framingham Test 1: Framingham Equation - Male, Treated for Hypertension = N",1,21,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 2: Framingham Equation - Male, Treated for Hypertension = Y",23,43,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 3: Framingham Equation - Male, Treated for Hypertension = N, Diabetic = Y",45,66,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 4: Framingham Equation - Male, Treated for Hypertension = N, Smoker = Y",68,89,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 5: Framingham Equation - FeMale, Treated for Hypertension = N",91,111,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 6: Framingham Equation - FeMale, Treated for Hypertension = Y",113,133,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 7: Framingham Equation - FeMale, Treated for Hypertension = N, Diabetic = Y",135,156,compute,expect_equal,compute_framingham,1,todo,
+test-compute_framingham.R,"compute_framingham Test 8: Framingham Equation - FeMale, Treated for Hypertension = N, Diabetic = Y",158,179,compute,expect_equal,compute_framingham,1,todo,
+test-compute_kidney.R,compute_egfr Test 1: EGFR CKD-EPI calculation,4,11,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 2: EGFR CKD-EPI calculation,14,21,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 3: CRCL calculation,25,32,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 4: CRCL calculation,36,43,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 5: EGFR MDRD calculation,47,55,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 6: EGFR MDRD calculation,58,66,compute,expect_equal,compute_egfr,1,todo,
+test-compute_kidney.R,compute_egfr Test 7: CKD-EPI calculated on input data,70,105,compute,expect_dfs_equal,compute_egfr,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 1:  Method 1 , > Qualifier Test",1,3,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 2: Method 1, >= Qualifier",5,7,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 3: Method 1, > Qualifier",9,11,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 4: Method 1, >= Qualifier",13,15,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 5: Method 1, < Qualifier",17,19,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 6: Method 1, <= Qualifier",21,23,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 7: Method 1, < Qualifier",25,27,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 8: Method 1, <= Qualifier",29,31,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 9: Method 1, > Qualifier, Factor=10",35,37,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 10: Method 1, >= Qualifier, Factor=10",39,41,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 11: Method 1, > Qualifier, Factor=10",43,45,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 12: Method 1, >= Qualifier, Factor=10",47,49,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 13: Method 1, < Qualifier, Factor=10",51,53,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 14: Method 1, <= Qualifier, Factor=10",55,57,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 15: Method 1, < Qualifier, Factor=10",59,61,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 16: Method 1, <= Qualifier, Factor=10",63,65,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 17: Method 2, > Qualifier",69,71,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 18: Method 2, >= Qualifier",73,75,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 19: Method 2, > Qualifier",77,79,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 20: Method 2, >= Qualifier",81,83,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 21: Method 2, < Qualifier",85,87,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 22: Method 2, <= Qualifier",89,91,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 23: Method 2, < Qualifier",93,95,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 24: Method 2, <= Qualifier",97,99,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 25: Method 2, No Qualifier",103,105,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,"compute_qual_imputation Test 26: Method 2, No Qualifier, Character Value",107,109,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_qual_imputation.R,compute_qual_imputation Test 27: Vector of Values,111,113,compute,expect_equal,compute_qual_imputation,1,todo,
+test-compute_scale.R,compute_scale Test 1: compute_scale works as expected,2,15,compute,expect_equal,compute_scale,1,todo,
+test-compute_scale.R,compute_scale Test 2: scale is flipped if flip_direction == TRUE,18,32,compute,expect_equal,compute_scale,1,todo,
+test-compute_scale.R,compute_scale Test 3: result is missing if min_n is not met,35,48,compute,expect_equal,compute_scale,1,todo,
+test-compute_scale.R,compute_scale Test 4: no transformation if source and target range aren't specified,51,62,compute,expect_equal,compute_scale,1,todo,
+test-compute_scale.R,compute_scale Test 5: works as expected within derive_summary_records(),65,105,compute,expect_equal,compute_scale,1,todo,
+test-compute_scale.R,"compute_scale Test 6: error if source_range is supplied, but not target_range",108,118,compute,expect_snapshot,compute_scale,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-compute_scale.R,"compute_scale Test 7: error if target_range is supplied, but not source_range",121,131,compute,expect_snapshot,compute_scale,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-consolidate_metadata.R,consolidate_metadata Test 1: consolidation works,2,40,core_infrastructure,expect_dfs_equal,consolidate_metadata,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-consolidate_metadata.R,consolidate_metadata Test 2: error if key vars are not unique,43,65,core_infrastructure,expect_error,consolidate_metadata,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-consolidate_metadata.R,consolidate_metadata Test 4: warn if variables differ,68,88,core_infrastructure,expect_snapshot,consolidate_metadata,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 1: basic patterns work correctly,4,18,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 1b: treatment_duration parameter works,21,42,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 1c: treatment_duration must be non-negative,45,68,compute,expect_error,convert_xxtpt_to_hours,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 2: returns expected values for days,71,82,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 3: returns expected values for hours+minutes,85,96,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 4: returns expected values for time ranges,99,109,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 4b: range_method parameter works,112,139,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 4c: range_method must be valid,142,157,compute,expect_error,convert_xxtpt_to_hours,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 5: returns expected values for hours only,160,173,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 6: returns expected values for minutes only,176,187,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 7: returns expected values for predose/before patterns,190,200,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 8: returns expected values for post/after EOI/EOT,203,242,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 9: returns expected values for after end patterns,245,278,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 10: returns expected values for HR POST INF,281,313,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 11: returns expected values for start patterns,316,326,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 12: returns expected values for MIN AFTER START INF,329,334,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 13: returns expected values for MIN PRE/BEFORE EOI/EOT,337,365,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 14: handles NA values correctly,368,373,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 15: handles empty input,376,381,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 17: unrecognized patterns return NA,384,392,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 18: ranges with direction use range_method,395,430,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 22: does not warn for time ranges,433,444,compute,expect_no_warning,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 23: handles all patterns with treatment_duration = 1,447,507,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 24: error if input is not character,510,515,compute,expect_error,convert_xxtpt_to_hours,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 25: handles whitespace variations,518,529,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 28: prioritizes specific patterns correctly,532,566,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 29: comprehensive integration test,569,636,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 30: handles decimal ranges,639,654,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 31: ranges with direction handle decimals,657,670,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 32: treatment_duration in comprehensive context,673,706,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 35: range_method affects all patterns consistently,709,735,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 36: range_method and treatment_duration work together,738,764,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 37: EOI and EOT are equivalent,767,803,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 38: MIN PRE EOI correctly uses treatment_duration,806,830,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 39: POST INFUSION/INF patterns work,833,865,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 40: vectorized treatment_duration works,868,886,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 41: treatment_duration vector length validated,889,897,compute,expect_error,convert_xxtpt_to_hours,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 42: handles NA in treatment_duration,900,910,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 43: ranges relative to EOI/EOT,913,981,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours Test 44: POST without EOI is relative to start,984,1036,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-convert_xxtpt_to_hours.R,convert_xxtpt_to_hours: bare numbers without units return NA,1039,1068,compute,expect_equal,convert_xxtpt_to_hours,1,todo,
+test-create_country_codes.R,create_country_codes Test 1: Country Codes,2,98,record_filter_dataset_creation,expect_dfs_equal,create_country_codes,2,todo,
+test-create_query_data.R,create_query_data Test 1: customized query defined by terms,38,66,record_filter_dataset_creation,expect_dfs_equal,create_query_data,2,todo,
+test-create_query_data.R,create_query_data Test 2: customized query defined by SMQs,69,123,record_filter_dataset_creation,expect_dfs_equal,create_query_data,2,todo,
+test-create_query_data.R,create_query_data Test 3: customized query defined by terms and SMQs,126,189,record_filter_dataset_creation,expect_dfs_equal,create_query_data,2,todo,
+test-create_query_data.R,create_query_data Test 4: SMQs,192,259,record_filter_dataset_creation,expect_dfs_equal,create_query_data,2,todo,
+test-create_query_data.R,create_query_data Test 5: issues error if SMQs without meddra_version are requested,262,279,record_filter_dataset_creation,expect_snapshot,create_query_data,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,create_query_data Test 6: SDGs,282,320,record_filter_dataset_creation,expect_dfs_equal,create_query_data,2,todo,
+test-create_query_data.R,create_query_data Test 7: issues error if SDGs without meddra_version are requested,323,340,record_filter_dataset_creation,expect_snapshot,create_query_data,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,create_query_data Test 8: error if no `get_terms_fun` provided,343,358,record_filter_dataset_creation,expect_snapshot,create_query_data,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,create_query_data Test 9: catching error from user function (get_terms_fun),361,384,record_filter_dataset_creation,expect_snapshot,create_query_data,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,query Test 10: error if name = auto for non SMQs/SDGs,388,403,record_filter_dataset_creation,expect_snapshot,query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,query Test 11: error if id = auto for non SMQs/SDGs,406,423,record_filter_dataset_creation,expect_snapshot,query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,query Test 12: error if invalid definition,426,435,record_filter_dataset_creation,expect_snapshot,query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,validate_query Test 13: error if definition is not a data frame or basket_select,440,457,record_filter_dataset_creation,expect_snapshot,validate_query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 14: error if SRCVAR missing,461,476,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 15: error if SRCVAR and GRPNAME missing,479,495,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 16: error if TERMCHAR and TERMNUM missing,498,513,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 17: error if no data frame,516,524,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 18: error if no observations,527,542,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 19: error if GRPNAME is missing,545,561,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,assert_terms Test 20: error if GRPID is missing,564,580,record_filter_dataset_creation,expect_snapshot,assert_terms,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,basket_select Test 21: error if name and id specified,584,594,record_filter_dataset_creation,expect_snapshot,basket_select,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,basket_select Test 22: error if neither name nor id specified,597,602,record_filter_dataset_creation,expect_snapshot,basket_select,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,basket_select Test 23: error if type is not specified,605,610,record_filter_dataset_creation,expect_snapshot,basket_select,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,basket_select Test 24: error if arguments inside ... are not named,613,624,record_filter_dataset_creation,expect_snapshot,basket_select,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_query_data.R,basket_select Test 25: basket_select customized query defined by SMQs extra arguments,627,701,record_filter_dataset_creation,expect_dfs_equal,basket_select,2,todo,
+test-create_query_data.R,format.basket_select Test 26: formatting is correct (id specified),705,715,record_filter_dataset_creation,expect_equal,format.basket_select,2,todo,
+test-create_query_data.R,format.basket_select Test 27: formatting is correct (name specified),718,723,record_filter_dataset_creation,expect_equal,format.basket_select,2,todo,
+test-create_query_data.R,format.basket_select Test 28: custom fields,726,741,record_filter_dataset_creation,expect_equal,format.basket_select,2,todo,
+test-create_query_data.R,format.basket_select Test 29: long expressions,744,759,record_filter_dataset_creation,expect_equal,format.basket_select,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 1: Works as expected for Q*/EVERY * cases,3,34,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 2: Works as expected for # TIMES PER cases,38,112,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 3: Works for different treatments,115,150,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 4: Custom lookup works,153,195,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 5: Warning is returned when values in EXDOSFRQ does not appear in lookup table,198,211,record_filter_dataset_creation,expect_error,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 6: Error when a date variable contains NA values,214,227,record_filter_dataset_creation,expect_snapshot,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_single_dose_dataset.R,"create_single_dose_dataset Test 7: Message for improper DT column names, ASTDT",230,251,record_filter_dataset_creation,expect_snapshot,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_single_dose_dataset.R,"create_single_dose_dataset Test 8: Message for improper DT column names, AENDT",254,270,record_filter_dataset_creation,expect_snapshot,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 9: error if no datetime and freq more than QD,273,284,record_filter_dataset_creation,expect_snapshot,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 10: Works as expected for BID cases,287,340,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 11: Works as expected for cases with nominal time,343,401,record_filter_dataset_creation,expect_dfs_equal,create_single_dose_dataset,2,todo,
+test-create_single_dose_dataset.R,create_single_dose_dataset Test 12: Error if lookup_column contains duplicates,404,431,record_filter_dataset_creation,expect_error,create_single_dose_dataset,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_basetype_records.R,derive_basetype_records Test 1: records are duplicated across different `BASETYPE` values,3,56,record_filter_dataset_creation,expect_dfs_equal,derive_basetype_records,2,todo,
+test-derive_basetype_records.R,derive_basetype_records Test 2: records that do not match any condition are kept,59,114,record_filter_dataset_creation,expect_dfs_equal,derive_basetype_records,2,todo,
+test-derive_expected_records.R,derive_expected_records Test 1: missing values in `by_vars`,2,45,record_filter_dataset_creation,expect_dfs_equal,derive_expected_records,2,todo,
+test-derive_expected_records.R,derive_expected_records Test 2: `by_vars` = NULL,49,86,record_filter_dataset_creation,expect_dfs_equal,derive_expected_records,2,todo,
+test-derive_expected_records.R,derive_expected_records Test 3: visit variables are parameter independent,90,129,record_filter_dataset_creation,expect_dfs_equal,derive_expected_records,2,todo,
+test-derive_expected_records.R,derive_expected_records Test 4: visit variables are parameter dependent,133,172,record_filter_dataset_creation,expect_dfs_equal,derive_expected_records,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 1: `mode` = first,3,69,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 2: `mode` = last,72,136,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 3: `source_datasets` works,139,284,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 4: event-specific mode,287,344,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 5: event_joined() is handled correctly,348,520,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 6: no tmp_event_nr_var,523,571,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 7: mode and condition used in event(),574,604,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 8: by_vars in event_joined(),607,667,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 9: filter_source in event_joined(),670,738,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_event,2,todo,
+test-derive_extreme_event.R,derive_extreme_event Test 10: error if source dataset not available,741,784,record_filter_dataset_creation,expect_snapshot,derive_extreme_event,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_extreme_event.R,derive_extreme_event Test 11: test for duplicates: one warning,787,843,record_filter_dataset_creation,expect_warning,derive_extreme_event,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_extreme_event.R,derive_extreme_event Test 12: test for duplicates: with error,847,904,record_filter_dataset_creation,expect_error,derive_extreme_event,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_extreme_records.R,derive_extreme_records Test 1: add last observation for each group,3,40,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 2: derive first PD date,43,111,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 3: derive death date parameter,114,156,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 4: latest evaluable tumor assessment date parameter,159,231,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 5: latest evaluable tumor assessment date parameter without overwriting existing result,234,303,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 6: error if no dataset_add,306,314,record_filter_dataset_creation,expect_error,derive_extreme_records,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_extreme_records.R,derive_extreme_records Test 7: keep vars in `keep_source_vars` in the new records,317,354,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 8: keep all vars in the new records when `keep_source_vars` is 'exprs(everything())',357,393,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 9: missing_values with dataset_ref,396,442,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_extreme_records.R,derive_extreme_records Test 10: order vars from dataset_add,445,483,record_filter_dataset_creation,expect_dfs_equal,derive_extreme_records,2,todo,
+test-derive_joined.R,"derive_vars_joined Test 1: no by_vars, no order, no new_vars",3,36,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 2: new_vars with rename,39,70,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 3: by_vars with rename,73,106,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 4: order with expression,109,141,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 5: join_vars with expression,144,184,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,"derive_vars_joined Test 6: no join_vars, no filter_join",188,219,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 7: new_vars expressions using variables from both datasets,222,255,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 8: error if new_vars are already in dataset,258,271,record_filter_dataset_creation,expect_snapshot,derive_vars_joined,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_joined.R,derive_vars_joined Test 9: fixing a bug from issue 1966,274,320,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 10: order vars are selected properly in function body,323,347,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,"derive_vars_joined Test 11: Ensure exist_flag, true/false value arguments work",351,383,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,"derive_vars_joined Test 12: by_vars with rename, no new_vars",386,414,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 13: with save_memory and no by_vars,417,450,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 14: save_memory with by_vars,453,488,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 15: filter_add is not ignored when join_type != 'all',491,539,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,derive_vars_joined Test 16: warning if `order` is not unique,542,571,record_filter_dataset_creation,expect_snapshot,derive_vars_joined,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_joined.R,derive_vars_joined Test 17: order with unnamed expression,574,599,record_filter_dataset_creation,expect_dfs_equal,derive_vars_joined,2,todo,
+test-derive_joined.R,get_joined_data Test 18: `first_cond_lower` works,603,645,record_filter_dataset_creation,expect_dfs_equal,get_joined_data,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 1: visits are missing,2,45,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 2: some visits have missing AVAL,49,93,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 3: visits are missing - and DTYPE already exits,97,150,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 4: visit variables are parameter independent,154,195,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 5: visit variables are parameter dependent,199,248,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 6: analysis visits are assigned based on time windows,252,303,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 7: imputation = update,307,360,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 8: imputation = update_add,364,417,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_locf_records.R,derive_locf_records Test 9: fill variables other than analysis_var for imputed records,421,472,record_filter_dataset_creation,expect_dfs_equal,derive_locf_records,2,todo,
+test-derive_merged.R,derive_vars_merged Test 1: merge all variables,3,35,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 2: merge selected variables,38,69,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 3: merge last value and flag matched by groups,72,108,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 4: merge last value and flag matched by groups,111,149,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 5: error if variable in both datasets,152,177,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged Test 6: by_vars with rename,180,212,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 7: expressions for new_vars and missing_values,215,252,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 8: Use of missing_values and exist_flags,256,299,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 9: use new variables in filter_add and order,302,346,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 10: warning if not unique w.r.t the by variables and the order,349,378,record_filter_dataset_creation,expect_warning,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged Test 11: error if not unique w.r.t the by variables and the order,381,411,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged Test 12: error if variables in missing_values but not in new_vars,414,444,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,"derive_vars_merged Test 13: error if not unique, no order, check_type = error",447,475,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,"derive_vars_merged Test 14: error if not unique, no order, check_type = warning",478,507,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,"derive_vars_merged Test 15: error if not unique, no order, check_type = NULL",510,539,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged Test 16: merge relationship as 'many-to-one',542,574,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged,2,todo,
+test-derive_merged.R,derive_vars_merged Test 17: error incorrect 'one-to-one',577,604,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged Test 18: merge sel vars 'one-to-one',607,634,record_filter_dataset_creation,expect_snapshot,derive_vars_merged,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_var_merged_exist_flag Test 19: merge existence flag,638,673,record_filter_dataset_creation,expect_dfs_equal,derive_var_merged_exist_flag,2,todo,
+test-derive_merged.R,derive_var_merged_exist_flag Test 20: by_vars with rename,676,711,record_filter_dataset_creation,expect_dfs_equal,derive_var_merged_exist_flag,2,todo,
+test-derive_merged.R,derive_vars_merged_lookup Test 21: merge lookup table,715,756,record_filter_dataset_creation,expect_snapshot,derive_vars_merged_lookup,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged_lookup Test 22: all by_vars have records in the lookup table,761,802,record_filter_dataset_creation,expect_message,derive_vars_merged_lookup,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged_lookup Test 23: by_vars with rename,805,844,record_filter_dataset_creation,expect_snapshot,derive_vars_merged_lookup,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_vars_merged_lookup Test 24: deperecation message for print_not_mapped argument,847,872,record_filter_dataset_creation,expect_snapshot,derive_vars_merged_lookup,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,get_not_mapped Test 25: not all by_vars have records in the lookup table,876,919,record_filter_dataset_creation,expect_snapshot,get_not_mapped,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,"derive_vars_merged_summary Test 26: dataset == dataset_add, no filter",923,951,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged_summary,2,todo,
+test-derive_merged.R,"derive_vars_merged_summary Test 27: dataset != dataset_add, filter",954,983,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged_summary,2,todo,
+test-derive_merged.R,derive_vars_merged_summary Test 28: by_vars with rename,986,1011,record_filter_dataset_creation,expect_dfs_equal,derive_vars_merged_summary,2,todo,
+test-derive_merged.R,derive_vars_merged_summary Test 29: error if no summary function,1014,1035,record_filter_dataset_creation,expect_snapshot,derive_vars_merged_summary,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,"derive_var_merged_summary Test 30: dataset == dataset_add, no filter",1039,1069,record_filter_dataset_creation,expect_dfs_equal,derive_var_merged_summary,2,todo,
+test-derive_merged.R,"derive_var_merged_summary Test 31: dataset != dataset_add, filter",1072,1103,record_filter_dataset_creation,expect_dfs_equal,derive_var_merged_summary,2,todo,
+test-derive_merged.R,derive_var_merged_summary Test 32: by_vars with rename,1106,1133,record_filter_dataset_creation,expect_dfs_equal,derive_var_merged_summary,2,todo,
+test-derive_merged.R,derive_var_merged_summary Test 33: error if no summary function,1136,1159,record_filter_dataset_creation,expect_snapshot,derive_var_merged_summary,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_merged.R,derive_var_merged_summary Test 34: deprecation warning,1162,1186,record_filter_dataset_creation,expect_warning,derive_var_merged_summary,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,compute_bmi Test 1: BMI calculation - single height & weight values,4,9,derive_param,expect_equal,compute_bmi,2,todo,
+test-derive_param_bmi.R,compute_bmi Test 2: compute_bmi BMI calculation - height & weight vectors,12,17,derive_param,expect_equal,compute_bmi,2,todo,
+test-derive_param_bmi.R,compute_bmi Test 3: BMI height & weight vectors - missing values,20,25,derive_param,expect_equal,compute_bmi,2,todo,
+test-derive_param_bmi.R,derive_param_bmi Test 4: BMI parameter NOT added - wrong hgt unit,32,44,derive_param,expect_error,derive_param_bmi,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,derive_param_bmi Test 5: BMI parameter NOT added - wrong wgt unit,47,59,derive_param,expect_error,derive_param_bmi,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,derive_param_bmi Test 6: BMI parameter NOT added - multiple unit for wgt,62,75,derive_param,expect_error,derive_param_bmi,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,derive_param_bmi Test 7: BMI parameter NOT added - PARAMCD not set,78,94,derive_param,expect_error,derive_param_bmi,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,derive_param_bmi Test 8: BMI parameter NOT added,99,127,derive_param,expect_snapshot,derive_param_bmi,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bmi.R,derive_param_bmi Test 9: BMI parameter is correctly added,132,164,derive_param,expect_dfs_equal,derive_param_bmi,2,todo,
+test-derive_param_bmi.R,derive_param_bmi Test 10: Derive BMI where height is measured only once,169,213,derive_param,expect_dfs_equal,derive_param_bmi,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 1: Mosteller method - single height & weight values,7,12,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 2: Mosteller method - height & weight vectors,15,20,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 3: Mosteller method - height & weight vectors - missing values,23,28,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 4: DuBois-DuBois method - single height & weight values,34,39,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 5: DuBois-DuBois method - height & weight vectors,42,47,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 6: DuBois-DuBois method - hgt and wgt vectors - missing values,50,55,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 7: Haycock method - single height & weight values,61,66,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 8: Haycock method - height & weight vectors,69,74,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 9: Haycock method - height & weight vectors - missing values,77,82,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 10: Gehan-George method - single height & weight values,88,93,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 11: Gehan-George method - height & weight vectors,96,101,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 12: Gehan-George method - height & weight vectors - missing values,104,109,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 13: Boyd method - single height & weight values,115,120,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 14: Boyd method - height & weight vectors,123,128,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 15: Boyd method - height & weight vectors - missing values,131,136,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 16: Fujimoto method - single height & weight values,142,147,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 17: Fujimoto method - height & weight vectors,150,155,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 18: Fujimoto method - height & weight vectors - missing values,158,163,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 19: Takahira method - single height & weight values,169,174,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 20: Takahira method - height & weight vectors,177,182,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 21: Takahira method - height & weight vectors - missing values,185,190,derive_param,expect_equal,compute_bsa,2,todo,
+test-derive_param_bsa.R,compute_bsa Test 22: an error is issued if an invalid method is specified,195,200,derive_param,expect_error,compute_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 23: BSA parameter NOT added - wrong unit for height,207,224,derive_param,expect_error,derive_param_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 24: BSA parameter NOT added - wrong unit for weight,227,244,derive_param,expect_error,derive_param_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 25: BSA parameter NOT added - multiple unit for weight,247,265,derive_param,expect_error,derive_param_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 26: BSA parameter NOT added - PARAMCD not set,268,285,derive_param,expect_error,derive_param_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 27: BSA parameter NOT added,290,319,derive_param,expect_snapshot,derive_param_bsa,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_bsa.R,derive_param_bsa Test 28: BSA parameter (Mosteller Method) is correctly added,324,359,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 29: BSA parameter (DuBois-DuBois method) is correctly added,362,394,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 30: BSA parameter (Haycock method) is correctly added,397,428,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 31: BSA parameter (Gehan-George method) is correctly added,431,463,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 32: BSA parameter (Boyd method) is correctly added,466,497,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 33: BSA parameter (Fujimoto method) is correctly added,500,532,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 34: BSA parameter (Takahira method) is correctly added,535,567,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_bsa.R,derive_param_bsa Test 35: Derive BSA where height is measured only once,570,616,derive_param,expect_dfs_equal,derive_param_bsa,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 1: new observations are derived correctly,3,51,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 2: new observations with constant parameters,54,99,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 3: no new observations if filtered dataset is empty,102,130,derive_param,expect_snapshot,derive_param_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,derive_param_computed Test 4: no new observations are added if a parameter is missing,133,161,derive_param,expect_snapshot,derive_param_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,"derive_param_computed Test 5: `dataset_add`, creating new parameters",165,217,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 6: no input dataset,220,262,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 7: expression in constant_parameters,265,315,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 8: no new observations if a constant parameter is missing,318,350,derive_param,expect_snapshot,derive_param_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,"derive_param_computed Test 9: compute multiple variables, keep_nas",353,396,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 10: specify variables for keep_nas,399,457,derive_param,expect_dfs_equal,derive_param_computed,2,todo,
+test-derive_param_computed.R,derive_param_computed Test 11: error if keep_nas is invalid,460,487,derive_param,expect_snapshot,derive_param_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,derive_param_computed Test 12: inform if no new records due to NAs,490,522,derive_param,expect_snapshot,derive_param_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,assert_parameters_argument Test 13: error if argument is of wrong type,526,531,derive_param,expect_snapshot,assert_parameters_argument,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_computed.R,get_hori_data Test 14: error if variables with more than one dot,535,558,derive_param,expect_snapshot,get_hori_data,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_doseint.R,new observations are derived correctly when zero_doses is NULL,1,49,derive_param,expect_dfs_equal,derive_param_doseint,2,todo,
+test-derive_param_doseint.R,new observations are derived correctly when zero_doses is Y,51,100,derive_param,expect_dfs_equal,derive_param_doseint,2,todo,
+test-derive_param_exist_flag.R,derive_param_merged_exist_flag Test 1: derive parameter indicating PD,3,66,derive_param,expect_dfs_equal,derive_param_merged_exist_flag,2,todo,
+test-derive_param_exist_flag.R,derive_param_merged_exist_flag Test 2: error is issued if parameter already exists in dataset,70,116,derive_param,expect_error,derive_param_merged_exist_flag,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_exposure.R,derive_param_exposure Test 1: works with DTM variables,2,98,derive_param,expect_dfs_equal,derive_param_exposure,2,todo,
+test-derive_param_exposure.R,derive_param_exposure Test 2: works with DT variables,101,193,derive_param,expect_dfs_equal,derive_param_exposure,2,todo,
+test-derive_param_exposure.R,derive_param_exposure Test 3: Errors,196,268,derive_param,expect_error,derive_param_exposure,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_extreme_record.R,derive_param_extreme_record Test 1: deprecation error if function is called,3,18,derive_param,expect_error,derive_param_extreme_record,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_framingham.R,derive_param_framingham Test 1: New observations are derived correctly,1,67,derive_param,expect_dfs_equal,derive_param_framingham,2,todo,
+test-derive_param_map.R,compute_map Test 1: MAP based on diastolic & systolic BP - single values,7,9,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,compute_map Test 2: MAP based on diastolic & systolic BP - vectors,12,16,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,compute_map Test 3: MAP based on diastolic & systolic BP with missing values,19,23,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,compute_map Test 4: MAP based on DBP & SBP & heart rate - single values,29,33,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,"compute_map Test 5: MAP based on diastolic, systolic BP & heart rate - vectors",36,41,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,"compute_map Test 6: MAP based on DBP, SBP & heart rate - with missing values",44,49,derive_param,expect_equal,compute_map,2,todo,
+test-derive_param_map.R,derive_param_map Test 7: MAP parameter NOT added - wrong DIABP unit,56,71,derive_param,expect_error,derive_param_map,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_map.R,derive_param_map Test 8: MAP parameter NOT added - wrong SYSBP unit,74,89,derive_param,expect_error,derive_param_map,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_map.R,derive_param_map Test 9: MAP parameter NOT added - wrong PULSE unit,92,109,derive_param,expect_error,derive_param_map,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_map.R,derive_param_map Test 10: MAP parameter NOT added - PARAMCD not set,112,128,derive_param,expect_error,derive_param_map,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_map.R,derive_param_map Test 11: MAP parameter NOT added,133,163,derive_param,expect_snapshot,derive_param_map,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_map.R,derive_param_map Test 12: MAP parameter (DBP/SBP/PULSE) is correctly added,168,205,derive_param,expect_dfs_equal,derive_param_map,2,todo,
+test-derive_param_map.R,derive_param_map Test 13: MAP parameter (DBP/SBP) is correctly added,208,237,derive_param,expect_dfs_equal,derive_param_map,2,todo,
+test-derive_param_qtc.R,derive_param_qtc Test 1: Bazett's method,3,35,derive_param,expect_dfs_equal,derive_param_qtc,2,todo,
+test-derive_param_qtc.R,derive_param_qtc Test 2: Fridericia's method,38,68,derive_param,expect_dfs_equal,derive_param_qtc,2,todo,
+test-derive_param_qtc.R,derive_param_qtc Test 3: Sagie's method,71,101,derive_param,expect_dfs_equal,derive_param_qtc,2,todo,
+test-derive_param_qtc.R,derive_param_qtc Test 4: Message if no new records,104,128,derive_param,expect_snapshot,derive_param_qtc,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_rr.R,derive_param_rr Test 1: new observations are derived correctly,4,44,derive_param,expect_dfs_equal,derive_param_rr,2,todo,
+test-derive_param_rr.R,derive_param_rr Test 2: Message if no new records,47,74,derive_param,expect_snapshot,derive_param_rr,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 1: new observations with analysis date are derived correctly,3,63,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 2: new parameter with analysis datetime is derived correctly,66,172,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,"derive_param_tte Test 3: no records for subjects not in ADSL, multiple events/cens",175,278,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 4: error is issued if DTC variables specified for date,281,333,derive_param,expect_error,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 5: by_vars parameter works correctly,336,411,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 6: an error is issued if some of the by variables are missing,414,472,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 7: errors if all by vars are missing in all source datasets,475,533,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 8: errors if PARAMCD and by_vars are not one to one,536,592,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 9: errors if set_values_to contains invalid expressions,595,653,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 10: error is issued if parameter code already exists,656,724,derive_param,expect_error,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 11: ensuring ADT is not NA because of missing start_date,727,794,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 12: test dataset and dynamic byvars populated,797,889,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 13: error if dataset_name not in source_datsets,892,936,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 14: detects duplicates in input datasets via pipeline functions,939,993,derive_param,expect_snapshot,derive_param_tte,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,derive_param_tte Test 15: using order for resolving ties,996,1052,derive_param,expect_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 16: produces consistent results regardless of input sort order,1055,1118,derive_param,expect_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 17: end dates,1121,1222,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,derive_param_tte Test 18: positive events,1225,1311,derive_param,expect_dfs_equal,derive_param_tte,2,todo,
+test-derive_param_tte.R,list_tte_source_objects Test 19: error is issued if package does not exist,1315,1320,derive_param,expect_snapshot,list_tte_source_objects,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_tte.R,list_tte_source_objects Test 20: expected objects produced,1323,1354,derive_param,expect_dfs_equal,list_tte_source_objects,2,todo,
+test-derive_param_wbc_abs.R,Test 1: Test adding absolute records for each by group,1,38,derive_param,expect_equal,derive_param_wbc_abs,2,todo,
+test-derive_param_wbc_abs.R,Test 2: Test when only one of WBC/differential is present,40,73,derive_param,expect_equal,derive_param_wbc_abs,2,todo,
+test-derive_param_wbc_abs.R,Test 3: Test when absolute record already present in source dataset 1,75,112,derive_param,expect_message,derive_param_wbc_abs,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_param_wbc_abs.R,Test 4: Test when absolute record already present in source dataset 2,114,150,derive_param,expect_equal,derive_param_wbc_abs,2,todo,
+test-derive_param_wbc_abs.R,Test 5: Test percent differential type,153,189,derive_param,expect_equal,derive_param_wbc_abs,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 1: creates new record per group and groups are retained,2,40,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 2: Filter record within `by_vars`,43,79,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 3: Errors,82,108,record_filter_dataset_creation,expect_error,derive_summary_records,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_summary_records.R,derive_summary_records Test 4: make sure dataset_add works,111,147,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 5: test missing values with dataset_ref,150,196,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 7: test using constant_values,199,237,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 8: test missing values using constant_values,240,289,record_filter_dataset_creation,expect_dfs_equal,derive_summary_records,2,todo,
+test-derive_summary_records.R,derive_summary_records Test 6: error if no summary function,293,313,record_filter_dataset_creation,expect_snapshot,derive_summary_records,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_analysis_ratio.R,Test 1: All Ratio Variables are Created,1,42,derive_var,expect_dfs_equal,derive_var_analysis_ratio,2,todo,
+test-derive_var_analysis_ratio.R,Test 2: All Ratio Variables are Created while NAs present,44,84,derive_var,expect_dfs_equal,derive_var_analysis_ratio,2,todo,
+test-derive_var_analysis_ratio.R,Test 3: User can supply custom variable by invoking override = TRUE and supplying a new_var name,86,130,derive_var,expect_dfs_equal,derive_var_analysis_ratio,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 1: two-sided reference ranges work,4,26,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 2: explicitly requesting to use `A1LO` and `A1HI` works,29,49,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 3: implicitly missing extreme ranges are supported,52,72,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 4: explicitly missing extreme ranges are supported,75,95,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 5: one-sided reference ranges work,98,118,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 6: missing `AVAL` is handled properly,121,133,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 7: missing `AVAL` is handled properly,136,150,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_anrind.R,derive_var_anrind Test 8: Show floating points not handled correctly,153,172,derive_var,expect_dfs_equal,derive_var_anrind,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr Test 1: ATOXGR cannot be graded,2,29,derive_var,expect_equal,derive_var_atoxgr,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr Test 2: ATOXGR = 0 (normal),32,51,derive_var,expect_equal,derive_var_atoxgr,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr Test 3: ATOXGR > 0 (HYPER),54,73,derive_var,expect_equal,derive_var_atoxgr,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr Test 4: ATOXGR < 0 (HYPO),76,95,derive_var,expect_equal,derive_var_atoxgr,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 5a: CTCAEv4 Anemia (SI unit),179,181,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 5b: CTCAEv4 Anemia (CV unit),193,195,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 5c: CTCAEv4 Anemia (SI + CV unit),198,207,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 6a: CTCAEv5 Anemia (SI unit),210,212,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 6b: CTCAEv5 Anemia (CV unit),215,217,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 6c: CTCAEv6 Anemia (SI unit),220,222,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 6d: CTCAEv6 Anemia (CV unit),225,227,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 7a: CTCAEv4 Leukocytosis (SI unit),253,255,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 7b: CTCAEv4 Leukocytosis (USCV unit),263,265,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 7c: CTCAEv4 Leukocytosis (legacy USCV unit),275,277,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8a: CTCAEv5 Leukocytosis (SI unit),280,282,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8b: CTCAEv5 Leukocytosis (USCV unit),285,287,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8c: CTCAEv5 Leukocytosis (legacy USCV unit),290,292,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8d: CTCAEv6 Leukocytosis (SI unit),295,297,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8e: CTCAEv6 Leukocytosis (USCV unit),300,302,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 8f: CTCAEv6 Leukocytosis (legacy USCV unit),305,307,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 9a: CTCAEv4 Act. partial thromboplastin time prolonged,336,338,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 9b: CTCAEv4 Activated partial thromboplastin time prolonged (SI + CV METDATA),341,349,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 10a: CTCAEv5 Act. partial thromboplastin time prolonged,352,354,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 10b: CTCAEv6 Act. partial thromboplastin time prolonged,357,359,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 10c: CTCAEv6 Act. part. thromboplastin time prolonged (CV),362,364,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 11: CTCAEv4 Alanine aminotransferase increased,393,395,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 12a: CTCAEv5 Alanine aminotransferase increased,404,443,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 12b: CTCAEv6 Alanine aminotransferase increased,457,497,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 13: CTCAEv4 Alkaline phosphatase increased,526,528,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 14a: CTCAEv5 Alkaline phosphatase increased,538,578,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 14b: CTCAEv6 Alkaline phosphatase increased,604,606,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 14c: CTCAEv6 Alkaline phosphatase increased (CV unit),609,611,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 15: CTCAEv4 Aspartate aminotransferase increased,641,643,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 16a: CTCAEv5 Aspartate aminotransferase increased,652,691,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 16b: CTCAEv6 Aspartate aminotransferase increased,704,743,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 17: CTCAEv4 Blood bilirubin increased,772,774,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 18a: CTCAEv5  Blood bilirubin increased,777,798,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 18b: CTCAEv6  Blood bilirubin increased,848,850,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 19a: CTCAEv4 CD4 Lymphocytes decreased (SI unit),903,905,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 19b: CTCAEv4 CD4 Lymphocytes decreased (USCV unit),908,910,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 20a: CTCAEv5 CD4 Lymphocytes decreased (SI unit),913,915,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 20b: CTCAEv5 CD4 Lymphocytes decreased (USCV unit),918,920,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 20c: CTCAEv6 CD4 Lymphocytes decreased (SI unit),923,925,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 20d: CTCAEv6 CD4 Lymphocytes decreased (USCV unit),928,930,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 21a: CTCAEv4 Cholesterol high (SI unit),1008,1010,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 21b: CTCAEv4 Cholesterol high (USCV unit),1013,1015,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 22a: CTCAEv5 Cholesterol high (SI unit),1018,1020,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 22b: CTCAEv5 Cholesterol high (USCV unit),1023,1025,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 22c: CTCAEv6 Cholesterol high (SI unit),1028,1030,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 22d: CTCAEv6 Cholesterol high (USCV unit),1033,1035,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 23: CTCAEv4 CPK increased,1064,1066,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 24: CTCAEv5 CPK increased,1069,1071,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 25: CTCAEv4 Creatinine increased,1112,1117,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 26a: CTCAEv5 Creatinine increased,1127,1132,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 26b: CTCAEv6 Creatinine increased,1142,1171,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 27: CTCAEv4 Fibrinogen decreased,1180,1236,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 28a: CTCAEv5 Fibrinogen decreased,1299,1301,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 28b: CTCAEv6 Fibrinogen decreased,1304,1306,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 29: CTCAEv4 GGT increased,1335,1337,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 30a: CTCAEv5 GGT increased,1347,1386,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 30b: CTCAEv6 GGT increased,1396,1436,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 31: CTCAEv4 Haptoglobin decreased,1457,1459,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 32a: CTCAEv5 Haptoglobin decreased,1462,1464,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 32b: CTCAEv6 Haptoglobin decreased,1467,1469,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 33a: CTCAEv4 Hemoglobin increased (SI unit),1523,1525,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 33b: CTCAEv4 Hemoglobin increased (USCV unit),1528,1530,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 34a: CTCAEv5 Hemoglobin increased (SI unit),1533,1538,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 34b: CTCAEv5 Hemoglobin increased (USCV unit),1541,1546,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 34c: CTCAEv6 Hemoglobin increased (SI unit),1549,1554,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 34d: CTCAEv6 Hemoglobin increased (USCV unit),1557,1562,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 35: CTCAEv4 INR increased,1571,1599,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 36a: CTCAEv5 INR increased,1608,1634,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 36b: CTCAEv6 INR increased,1637,1663,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 37: CTCAEv4 Lipase increased,1692,1694,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 38a: CTCAEv5 Lipase increased,1697,1699,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 38b: CTCAEv6 Lipase increased,1727,1729,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 39a: CTCAEv4 Lymphocyte count decreased (SI unit),1771,1773,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 39b: CTCAEv4 Lymphocyte count decreased (USCV unit),1781,1783,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 39c: CTCAEv4 Lymphocyte count decreased (legacy USCV unit),1794,1796,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 40a: CTCAEv5 Lymphocyte count decreased (SI unit),1799,1801,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 40b: CTCAEv5 Lymphocyte count decreased (USCV unit),1804,1806,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 40c: CTCAEv5 Lymphocyte count decreased (legacy USCV unit),1817,1819,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 41a: CTCAEv4 Lymphocyte count increased (SI unit),1844,1846,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 41b: CTCAEv4 Lymphocyte count increased  (USCV unit),1865,1867,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 42a: CTCAEv5 Lymphocyte count increased (SI unit),1871,1873,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 42b: CTCAEv5 Lymphocyte count increased (USCV unit),1876,1878,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 42c: CTCAEv6 Lymphocyte count increased (SI unit),1881,1883,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 42d: CTCAEv6 Lymphocyte count increased (USCV unit),1886,1888,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 43a: CTCAEv4 Neutrophil count decreased (SI unit),1930,1932,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 43b: CTCAEv4 Neutrophil count decreased (USCV unit),1951,1953,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 44a: CTCAEv5 Neutrophil count decreased (SI unit),1957,1959,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 44b: CTCAEv5 Neutrophil count decreased (USCV unit),1962,1964,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 44c: CTCAEv6 Neutrophil count decreased (SI unit),1995,1997,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 44d: CTCAEv6 Neutrophil count decreased (USCV unit),2000,2007,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 44e: CTCAEv6 Neutrophil count decreased (legacy USCV unit),2010,2018,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 45a: CTCAEv4 Platelet count decreased (SI unit),2060,2062,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 45b: CTCAEv4 Platelet count decreased (USCV unit),2070,2072,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 45c: CTCAEv4 Platelet count decreased (legacy USCV unit),2083,2085,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46a: CTCAEv5 Platelet count decreased (SI unit),2088,2090,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46b: CTCAEv5 Platelet count decreased (USCV unit),2093,2095,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46c: CTCAEv5 Platelet count decreased (legacy USCV unit),2098,2100,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46d: CTCAEv6 Thrombocytopenia (SI unit),2126,2128,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46e: CTCAEv6 Thrombocytopenia (USCV unit),2131,2136,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 46f: CTCAEv6 Platelet count decreased (legacy USCV unit),2139,2149,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 47a: CTCAEv4 Serum amylase increased (SI unit),2178,2180,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 47b: CTCAEv4 Serum amylase increased (USCV unit),2183,2185,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 48a: CTCAEv5 Serum amylase Nincreased (SI unit),2188,2190,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 48b: CTCAEv5 Serum amylase increased (USCV unit),2193,2195,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 48c: CTCAEv6 Serum amylase increased (SI unit),2198,2200,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 49a: CTCAEv4 White blood cell decreased (SI unit),2252,2254,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 49b: CTCAEv4 White blood cell decreased (USCV unit),2257,2259,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 50a: CTCAEv5 White blood cell decreased (SI unit),2263,2265,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 50b: CTCAEv5 White blood cell decreased (USCV unit),2268,2270,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 50c: CTCAEv6 White blood cell decreased (SI unit),2273,2275,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 50d: CTCAEv6 White blood cell decreased (USCV unit),2278,2280,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 51a: CTCAEv4 Hypercalcemia (SI unit),2357,2359,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 51b: CTCAEv4 Hypercalcemia (USCV unit),2362,2364,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 52a: CTCAEv5 Hypercalcemia (SI unit),2367,2369,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 52b: CTCAEv5 Hypercalcemia (USCV unit),2372,2374,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 52c: CTCAEv6 Hypercalcemia (SI unit),2377,2379,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 52c: CTCAEv6 Hypercalcemia (USCV unit),2382,2384,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 53a: CTCAEv4 Hypercalcemia (Ionized) (SI unit),2459,2461,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 53b: CTCAEv4 Hypercalcemia (Ionized) (USCV unit),2464,2466,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 54a: CTCAEv5 Hypercalcemia (Ionized) (SI unit),2469,2471,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 54b: CTCAEv5 Hypercalcemia (Ionized) (USCV unit),2474,2476,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 54c: CTCAEv6 Hypercalcemia (Ionized) (SI unit),2479,2481,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 54d: CTCAEv6 Hypercalcemia (Ionized) (USCV unit),2484,2486,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 55a: CTCAEv4 Hyperglycemia (Fasting) (SI unit),2532,2534,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 55b: CTCAEv4 Hyperglycemia (Fasting) (USCV unit),2537,2568,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 55c: CTCAEv6 Hyperglycemia (Fasting) (SI unit),2571,2573,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 56a: CTCAEv4 Hyperglycemia (SI unit),2616,2618,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 56b: CTCAEv4 Hyperglycemia (USCV unit),2621,2623,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 56c: CTCAEv6 Hyperglycemia (SI unit),2626,2628,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 56d: CTCAEv6 Hyperglycemia (USCV unit),2631,2633,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 57a: CTCAEv4 Hyperkalemia (SI unit),2673,2675,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 57b: CTCAEv4 Hyperkalemia (USCV unit),2678,2680,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 58a: CTCAEv5 Hyperkalemia (SI unit),2683,2685,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 58b: CTCAEv5 Hyperkalemia (USCV unit),2688,2690,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 58c: CTCAEv6 Hyperkalemia (SI unit),2693,2695,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 59a: CTCAEv4 Hypermagnesemia (SI unit),2761,2763,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 59b: CTCAEv4 Hypermagnesemia (USCV unit),2766,2768,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 60a: CTCAEv5 Hypermagnesemia (SI unit),2771,2773,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 60b: CTCAEv5 Hypermagnesemia (USCV unit),2776,2778,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 60c: CTCAEv6 Hypermagnesemia (SI unit),2781,2783,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 60d: CTCAEv6 Hypermagnesemia (USCV unit),2786,2788,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 61a: CTCAEv4 Hypernatremia (SI unit),2828,2830,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 61b: CTCAEv4 Hypernatremia (USCV unit),2833,2835,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 62a: CTCAEv5 Hypernatremia (SI unit),2838,2840,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 62b: CTCAEv5 Hypernatremia (USCV unit),2843,2845,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 62c: CTCAEv6 Hypernatremia (SI unit),2848,2850,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 63a: CTCAEv4 Hypertriglyceridemia (SI unit),2904,2906,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 63b: CTCAEv4 Hypertriglyceridemia (USCV unit),2909,2911,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 64a: CTCAEv5 Hypertriglyceridemia (SI unit),2914,2916,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 64b: CTCAEv5 Hypertriglyceridemia (USCV unit),2919,2921,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 64c: CTCAEv6 Hypertriglyceridemia (SI unit),2924,2926,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 64d: CTCAEv6 Hypertriglyceridemia (USCV unit),2929,2931,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 65a: CTCAEv5 Hyperuricemia (SI unit),2991,2996,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 65b: CTCAEv5 Hyperuricemia (USCV unit),2999,3004,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 65c: CTCAEv6 Hyperuricemia (SI unit),3007,3012,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 65d: CTCAEv6 Hyperuricemia (USCV unit),3015,3020,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 66a: CTCAEv4 Hyperuricemia (SI unit),3025,3033,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 66b: CTCAEv4 Hyperuricemia (USCV unit),3036,3041,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 67a: CTCAEv4 Hypoalbuminemia (SI unit),3085,3087,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 67b: CTCAEv4 Hypoalbuminemia (USCV unit),3090,3092,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 68a: CTCAEv5 Hypoalbuminemia (SI unit),3095,3097,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 68b: CTCAEv5 Hypoalbuminemia (USCV unit),3100,3102,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 68c: CTCAEv6 Hypoalbuminemia (SI unit),3105,3107,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 68d: CTCAEv6 Hypoalbuminemia (USCV unit),3110,3112,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 69a: CTCAEv4 Hypocalcemia (SI unit),3187,3189,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 69b: CTCAEv4 Hypocalcemia (USCV unit),3192,3194,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 70a: CTCAEv5 Hypocalcemia (SI unit),3197,3199,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 70b: CTCAEv5 Hypocalcemia (USCV unit),3202,3204,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 70c: CTCAEv6 Hypocalcemia (SI unit),3207,3209,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 70d: CTCAEv6 Hypocalcemia (USCV unit),3212,3214,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 71a: CTCAEv4 Hypocalcemia (Ionized) (SI unit),3266,3268,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 71b: CTCAEv4 Hypocalcemia (Ionized) (USCV unit),3271,3273,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 72a: CTCAEv5 Hypocalcemia (Ionized) (SI unit),3276,3278,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 72b: CTCAEv5 Hypocalcemia (Ionized) (USCV unit),3281,3283,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 72c: CTCAEv6 Hypocalcemia (Ionized) (SI unit),3286,3288,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 72d: CTCAEv6 Hypocalcemia (Ionized) (USCV unit),3291,3293,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 73a: CTCAEv4 Hypoglycemia (SI unit),3369,3371,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 73b: CTCAEv4 Hypoglycemia (USCV unit),3374,3376,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 74a: CTCAEv5 Hypoglycemia (SI unit),3380,3382,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 74b: CTCAEv5 Hypoglycemia (USCV unit),3385,3387,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 74c: CTCAEv6 Hypoglycemia (SI unit),3390,3392,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 74d: CTCAEv6 Hypoglycemia (USCV unit),3395,3397,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 75a: CTCAEv4 Hypokalemia (SI unit),3432,3434,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 75b: CTCAEv4 Hypokalemia (USCV unit),3437,3439,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 76a: CTCAEv5 Hypokalemia (SI unit),3442,3444,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 76b: CTCAEv5 Hypokalemia (USCV unit),3447,3449,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 76c: CTCAEv6 Hypokalemia (SI unit),3452,3454,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 76d: CTCAEv6 Hypokalemia (USCV unit),3457,3459,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 77a: CTCAEv4 Hypomagnesemia (SI unit),3535,3537,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 77b: CTCAEv4 Hypomagnesemia (USCV unit),3540,3542,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 78a: CTCAEv5 Hypomagnesemia (SI unit),3545,3547,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 78b: CTCAEv5 Hypomagnesemia (USCV unit),3550,3552,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 78c: CTCAEv6 Hypomagnesemia (SI unit),3555,3557,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 78d: CTCAEv6 Hypomagnesemia (USCV unit),3560,3562,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 79a: CTCAEv4 Hyponatremia (SI unit),3597,3599,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 79b: CTCAEv4 Hyponatremia (USCV unit),3602,3604,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 80a: CTCAEv5 Hyponatremia (SI unit),3607,3609,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 80b: CTCAEv5 Hyponatremia (USCV unit),3612,3614,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 80c: CTCAEv6 Hyponatremia (SI unit),3617,3619,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 81: CTCAEv4 Hypophosphatemia (SI unit),3637,3668,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 81: CTCAEv4 Hypophosphatemia (USCV unit),3671,3702,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 82: DAIDS Acidosis,3712,3736,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 83a: DAIDS Albumin, Low (SI unit)",3777,3779,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 83b: DAIDS Albumin, Low (USCV unit)",3782,3784,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 84: DAIDS Alkaline Phosphatase, High",3794,3818,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 85: DAIDS Alkalosis,3826,3850,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 86: DAIDS ALT, High",3860,3884,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 87: DAIDS Amylase, High",3894,3917,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 88: DAIDS AST, High",3926,3950,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 89a: DAIDS Bicarbonate, Low (SI unit)",3990,3992,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 89b: DAIDS Bicarbonate, Low (USCV unit)",3995,3997,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 90: DAIDS Direct Bilirubin, High (SI unit)",4146,4148,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 90b: DAIDS Direct Bilirubin, High (USCV unit)",4151,4153,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 91: DAIDS Total Bilirubin, High",4215,4217,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 92a: DAIDS Calcium, High (SI unit)",4374,4376,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 92b: DAIDS Calcium, High (USCV unit)",4379,4381,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 93a: DAIDS Calcium (Ionized), High (SI unit)",4436,4438,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 93b: DAIDS Calcium (Ionized), High (USCV unit)",4441,4443,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 94a: DAIDS Calcium, Low (SI unit)",4604,4606,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 94b: DAIDS Calcium, Low (USCV unit)",4609,4611,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 95a: DAIDS Calcium (Ionized), Low (SI unit)",4665,4667,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 95b: DAIDS Calcium (Ionized), Low (USCV unit)",4670,4672,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 96: DAIDS Creatine Kinase, High",4682,4702,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 97: DAIDS Creatinine, High",4712,4738,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 98a:  DAIDS Glucose Fasting, High (SI unit)",4756,4776,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 98b:  DAIDS Glucose Fasting, High (USCV unit)",4779,4799,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 99a:  DAIDS Glucose Nonfasting, High (SI unit)",4816,4836,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 99b:  DAIDS Glucose Nonfasting, High (USCV unit)",4839,4859,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 100a:  DAIDS Glucose, Low (SI unit)",5016,5018,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 100b:  DAIDS Glucose, Low (USCV unit)",5021,5023,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 101:  DAIDS Lactate, High",5032,5049,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 102:  DAIDS Lipase, High",5060,5081,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 103a: DAIDS Cholesterol, Fasting, High (SI unit)",5225,5227,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 103b: DAIDS Cholesterol, Fasting, High (USCV unit)",5230,5232,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 104a: DAIDS LDL, Fasting, High (SI unit)",5395,5397,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 104b: DAIDS LDL, Fasting, High (USCV unit)",5400,5402,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 105a: DAIDS Triglycerides, Fasting, High (SI unit)",5419,5439,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 105b: DAIDS Triglycerides, Fasting, High (USCV unit)",5442,5462,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 106a: DAIDS Magnesium, Low (SI unit)",5501,5503,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 106b: DAIDS Magnesium, Low (USCV unit)",5506,5508,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 107a: DAIDS Phosphate, Low (SI unit)",5735,5737,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 107b: DAIDS Phosphate, Low (USCV unit)",5740,5742,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 108a: DAIDS Potassium, High (SI unit)",5771,5773,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 108b: DAIDS Potassium, High (USCV unit)",5776,5778,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 109a: DAIDS Potassium, Low (SI unit)",5807,5809,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 109b: DAIDS Potassium, Low (USCV unit)",5812,5814,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 110a: DAIDS Sodium, High (SI unit)",5843,5845,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 110b: DAIDS Sodium, High (USCV unit)",5848,5850,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 111a: DAIDS Sodium, Low (SI unit)",5879,5881,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 111b: DAIDS Sodium, Low (USCV unit)",5884,5886,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 112a: DAIDS Uric Acid, High (SI unit)",5902,5922,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 112b: DAIDS Uric Acid, High (USCV unit)",5925,5945,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 113a: DAIDS Absolute CD4 Count, Low (SI unit)",6004,6006,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 113b: DAIDS Absolute CD4 Count, Low (USCV unit)",6015,6017,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 114a: DAIDS Absolute Lymphocyte Count, Low (SI unit)",6077,6079,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 114b: DAIDS Absolute Lymphocyte Count, Low (USCV unit)",6087,6089,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,"derive_var_atoxgr_dir Test 114c: DAIDS Absolute Lymph. Count, Low (legacy USCV unit)",6098,6100,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 115a: DAIDS ANC Low (SI unit),6217,6219,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 115b: DAIDS ANC Low (USCV unit),6227,6229,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 115c: DAIDS ANC Low (legacy USCV unit),6238,6240,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 116a: DAIDS Fibrinogen Decreased (SI unit),6283,6285,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 116b: DAIDS Fibrinogen Decreased (USCV unit),6296,6298,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 117a: DAIDS HGB Low (SI unit),6518,6520,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 117b: DAIDS HGB Low (CV unit),6523,6531,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 118: DAIDS INR High,6542,6563,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 119a: DAIDS Methemoglobin (SI unit),6593,6595,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 119b: DAIDS Methemoglobin (USCV unit),6598,6600,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 120: DAIDS PTT High,6610,6630,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 121a: DAIDS Platelets decreased (SI unit),6658,6660,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 121b: DAIDS Platelets decreased (USCV unit),6668,6670,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 121c: DAIDS Platelets decreased (legacy USCV unit),6679,6681,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 122: DAIDS PT High,6691,6711,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 123a: DAIDS White blood cell decreased (SI unit),6785,6787,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 123b: DAIDS White blood cell decreased (USCV unit),6795,6797,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 123c: DAIDS White blood cell decreased (USCV unit),6806,6808,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 124: CTCAEv6 LDH increased (SI unit),6817,6830,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 125: CTCAEv6 HDL decreased (SI unit),6833,6846,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 126: CTCAEv6 LDL increased (SI unit),6849,6862,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 127: CTCAEv6 Acidosis (SI unit),6869,6893,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 128: CTCAEv6 Alkalosis (SI unit),6901,6925,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 129: CTCAEv6 Creat. clear. dec. (SI unit),6932,6952,derive_var,other,derive_var_atoxgr_dir,2,todo,
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 130: CTCAEv6  Blood bilirubin increased,6959,6977,derive_var,expect_snapshot,derive_var_atoxgr_dir,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 131: CTCAEv6  Blood bili incr. high_indicator not defined,6981,6994,derive_var,expect_error,derive_var_atoxgr_dir,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 132: CTCAEv6 Creatinine incr. low_indicator not defined,6997,7019,derive_var,expect_error,derive_var_atoxgr_dir,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_atoxgr.R,derive_var_atoxgr_dir Test 133: ERROR when CRITERIA different with same TERM and UNIT,7022,7051,derive_var,expect_error,derive_var_atoxgr_dir,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_base.R,derive_var_base Test 1: `target` is set to `source` where `ABLFL == 'Y'`,2,46,derive_var,expect_dfs_equal,derive_var_base,2,todo,
+test-derive_var_base.R,derive_var_base Test 2: `target` is set to `NA` if a baseline record is missing,49,80,derive_var,expect_dfs_equal,derive_var_base,2,todo,
+test-derive_var_base.R,derive_var_base Test 3: only the `target` variable is added to the input dataset,83,114,derive_var,expect_dfs_equal,derive_var_base,2,todo,
+test-derive_var_base.R,derive_var_base Test 4: error if multiple baseline records,117,138,derive_var,expect_snapshot,derive_var_base,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_chg.R,`CHG` is calculated as `AVAL - BASE`,1,37,derive_var,expect_equal,derive_var_chg,2,todo,
+test-derive_var_chg.R,`PCHG` is calculated as `(AVAL - BASE) / abs(BASE) * 100`,39,76,derive_var,expect_equal,derive_var_chg,2,todo,
+test-derive_var_chg.R,`PCHG` is set to `NA` if `BASE == 0`,78,94,derive_var,expect_equal,derive_var_chg,2,todo,
+test-derive_var_dthcaus.R,dthcaus_source Test 1: deprecation error if function is called,3,14,derive_var,expect_error,dthcaus_source,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_dthcaus.R,derive_var_dthcaus Test 2: deprecation error if function is called,18,26,derive_var,expect_error,derive_var_dthcaus,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_extreme_date.R,date_source Test 1: deprecation error if function is called,3,11,derive_var,expect_error,date_source,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_extreme_date.R,derive_var_extreme_dt Test 2: deprecation error if function is called,15,25,derive_var,expect_error,derive_var_extreme_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_extreme_date.R,derive_var_extreme_dtm Test 3: deprecation error if function is called,29,39,derive_var,expect_error,derive_var_extreme_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 1: first observation for each group is flagged,3,29,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 2: last observation for each group is flagged,32,57,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 3: flag_all = FALSE when mode is first,60,88,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 4: flag_all = TRUE when mode is first,91,118,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 5: flag_all = FALSE when mode is last,121,149,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 6: flag_all = TRUE when mode is last,152,179,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 7: case for missing order variables,181,206,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 8: additional case for missing order variables,208,234,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_extreme_flag.R,derive_var_extreme_flag Test 9: changing true/false flag value works,238,265,derive_var,expect_dfs_equal,derive_var_extreme_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 1: filter without first_cond,4,59,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 2: filter with first_cond,63,116,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 3: filter with first_cond and summary function,121,177,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 4: join_type = 'all',182,228,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 5: join_type = 'before',232,268,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 6: tmp_obs_nr_var argument works,272,305,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 7: no warning if multiple records match,308,343,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_joined_exist_flag.R,derive_var_joined_exist_flag Test 8: filter_add is considered,346,376,derive_var,expect_dfs_equal,derive_var_joined_exist_flag,2,todo,
+test-derive_var_merged_ef_msrc.R,derive_var_merged_ef_msrc Test 1: wihtout by_vars,2,49,derive_var,expect_dfs_equal,derive_var_merged_ef_msrc,2,todo,
+test-derive_var_merged_ef_msrc.R,derive_var_merged_ef_msrc Test 2: with by_vars,52,104,derive_var,expect_dfs_equal,derive_var_merged_ef_msrc,2,todo,
+test-derive_var_merged_ef_msrc.R,error if source dataset is not available,106,149,derive_var,expect_snapshot,derive_var_merged_ef_msrc,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 1: basic single dose study,4,26,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 2: multiple dose study,29,57,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 3: custom treatment duration,60,81,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 4: custom first dose day,84,105,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 5: handles NA in timepoint,108,127,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 6: handles NA in visit day,130,149,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 7: custom new variable name,152,168,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 8: preserves existing columns,171,187,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 9: handles missing tpt_var from dataset gracefully,190,219,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 10: error if visit_day missing,222,237,date_time,expect_error,derive_var_nfrlt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 11: error if first_dose_day not positive,240,267,date_time,expect_error,derive_var_nfrlt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 12: error if treatment_duration is negative,270,297,date_time,expect_error,derive_var_nfrlt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 13: works with different timepoint patterns,300,328,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 14: handles decimal visit days,331,352,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 15: multiple subjects,355,375,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 16: range_method parameter works,378,412,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 17: works with Before and After terminology,415,434,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 18: EOI and EOT produce same results,437,469,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 19: default treatment_duration is 0,472,491,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 20: PRE EOI/EOT correctly uses treatment_duration,494,520,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 21: works without tpt_var,523,542,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 22: handles unscheduled visits,545,566,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 23: handles early discontinuation,569,589,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 24: handles multiple exclusion criteria,592,613,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 25: works without tpt_var and with set_values_to_na,616,635,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 26: handles missing tpt_var gracefully,638,657,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 27: NA in VISITDY results in NA,660,678,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 28: set_values_to_na with complex condition,681,703,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 29: treatment_duration as variable,705,728,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 30: handles NA in treatment_duration variable,731,751,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 31: handles negative visit days correctly,754,777,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 32: negative days with timepoints,780,801,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 33: first_dose_day = 7 with negative days,804,826,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 34: all positive days require no adjustment,829,851,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 35: edge case Day -1 to Day 1,854,873,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 36: negative days without tpt_var,876,896,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 37: first_dose_day = 8 with mixed days,899,923,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt: different output units work correctly,926,973,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt: invalid out_unit throws error,976,992,date_time,expect_error,derive_var_nfrlt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_nfrlt.R,derive_var_nfrlt: weeks output for weekly dosing study,995,1013,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt: minutes output for short-term PK study,1016,1034,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt: unit variable is created correctly,1037,1090,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 43: unit variable handles NA correctly,1093,1110,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 44: unit variable respects set_values_to_na,1113,1131,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 45: no unit variable created when not requested,1134,1148,date_time,expect_false,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 46: unit variable preserves user's case,1151,1189,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 47: deriving multiple time variables,1192,1219,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 48: out_unit is case-insensitive,1222,1259,date_time,expect_no_error,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 49: accepts all unit variations,1262,1354,date_time,expect_no_error,derive_var_nfrlt,2,todo,
+test-derive_var_nfrlt.R,derive_var_nfrlt Test 50: unit variations produce correct results,1357,1398,date_time,expect_equal,derive_var_nfrlt,2,todo,
+test-derive_var_obs_number.R,derive_var_obs_number Test 1: create default new variable ASEQ,2,45,derive_var,expect_dfs_equal,derive_var_obs_number,2,todo,
+test-derive_var_obs_number.R,derive_var_obs_number Test 2: sorting missing value is smallest,48,92,derive_var,expect_dfs_equal,derive_var_obs_number,2,todo,
+test-derive_var_obs_number.R,derive_var_obs_number Test 3: create customized new variable ASEQ1,96,138,derive_var,expect_dfs_equal,derive_var_obs_number,2,todo,
+test-derive_var_obs_number.R,derive_var_obs_number Test 4: expected condition for `check_type` ,141,169,derive_var,expect_error,derive_var_obs_number,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 1: `start_date` < `ref_start_date`,2,25,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 2: `ref_start_date` is NA,28,50,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 3: `start_date` is NA,53,77,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,"derive_var_ontrtfl Test 4: start_date >= ref_start_date, no ref_end_date and filter_pre_timepoint",80,104,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 5: `filter_pre_timepoint` is specified,107,132,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,"derive_var_ontrtfl Test 6: ref_start_date <= start_date <= ref_end_date, no ref_end_window",135,166,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 7: ref_start_date <= start_date <= ref_end_date + ref_end_window,169,197,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 8: considering time for ref_end_date,200,231,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 9: end_date < ref_start_date and start_date is NA,234,261,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 10: end_date > ref_start_date and start_date is NA,264,289,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 11: end_date is NA and start_date < ref_start_date a la Roche,292,317,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 12: end_date is NA and start_date < ref_start_date a la GSK,320,346,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 13: end_date is NA and start_date < ref_start_date a la GSK,349,375,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,derive_var_ontrtfl Test 14: start_date < ref_start_date and end_date < ref_end_date for Period 01,378,405,derive_var,expect_dfs_equal,derive_var_ontrtfl,2,todo,
+test-derive_var_ontrtfl.R,"derive_var_ontrtfl Test 15: if trt end date is missing, the obs may still be flagged",409,441,derive_var,expect_snapshot,derive_var_ontrtfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_relative_flag.R,derive_var_relative_flag Test 1: flag observations up to first PD,2,40,derive_var,expect_dfs_equal,derive_var_relative_flag,2,todo,
+test-derive_var_relative_flag.R,derive_var_relative_flag Test 2: Flag AEs after COVID AE,43,73,derive_var,expect_dfs_equal,derive_var_relative_flag,2,todo,
+test-derive_var_shift.R,derive_var_shift Test 1: Shift based on character variables,4,34,derive_var,expect_equal,derive_var_shift,2,todo,
+test-derive_var_shift.R,derive_var_shift Test 2: Shift based on character variables with missing values,38,67,derive_var,expect_equal,derive_var_shift,2,todo,
+test-derive_var_shift.R,derive_var_shift Test 3: Shift based on numeric variables with missing values,71,100,derive_var,expect_equal,derive_var_shift,2,todo,
+test-derive_var_shift.R,derive_var_shift Test 4: Shift with user-specified missing_value and sep_val,103,134,derive_var,expect_equal,derive_var_shift,2,todo,
+test-derive_var_trtdurd.R,TRTDURD is added,1,11,date_time,expect_equal,derive_var_trtdurd,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 1: end_window and worsening parameters not specfied,2,44,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 2: with end_window and worsening,47,94,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 3: with end_window and worsening within grouping variable,97,147,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 4: considering trt end time,151,199,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 5: considering trt end time,202,253,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 6: error if `end_window` without `trt_end_date`,256,276,derive_var,expect_snapshot,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 7: error if `initial_intensity` without `intensity`,279,299,derive_var,expect_snapshot,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 8: error if `intensity` without `initial_intensity`,302,322,derive_var,expect_snapshot,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 9: error if `intensity` without `initial_intensity`,325,346,derive_var,expect_snapshot,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 10: error if `intensity` without `initial_intensity`,349,371,derive_var,expect_warning,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 11: error if `group_var` specified without `subject_keys`,374,396,derive_var,expect_snapshot,derive_var_trtemfl,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_var_trtemfl.R,derive_var_trtemfl Test 12: Checking test cases from PHUSE White Paper on Treatment Emergent AEs,401,459,derive_var,expect_dfs_equal,derive_var_trtemfl,2,todo,
+test-derive_vars_aage.R,derive_vars_aage Test 1: duration and unit variable are added,3,13,date_time,expect_dfs_equal,derive_vars_aage,2,todo,
+test-derive_vars_aage.R,derive_vars_aage Test 2: Error is thrown when age_unit is not proper unit,16,25,date_time,expect_error,derive_vars_aage,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_aage.R,derive_var_age_years Test 3: derive_var_age_years works as expected when AGEU exists,30,44,date_time,expect_dfs_equal,derive_var_age_years,2,todo,
+test-derive_vars_aage.R,derive_var_age_years Test 4: AGEU doesn't exist and `age_unit` is used,47,59,date_time,expect_dfs_equal,derive_var_age_years,2,todo,
+test-derive_vars_aage.R,derive_var_age_years Test 5: Error is thrown when age_unit is not proper unit,62,68,date_time,expect_error,derive_var_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_aage.R,derive_var_age_years Test 6: Error is issued if age_unit is missing,71,77,date_time,expect_snapshot,derive_var_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_aage.R,derive_var_age_years Test 7: warn if `age_unit` doesn't match units in data,80,93,date_time,expect_snapshot,derive_var_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_aage.R,derive_var_age_years Test 8: error if age_unit has more than one value.,97,111,date_time,expect_error,derive_var_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_aage.R,derive_var_age_years Test 9: 'unit' variable is handled case insensitive,114,140,date_time,expect_equal,derive_var_age_years,2,todo,
+test-derive_vars_aage.R,derive_var_age_years Test 10: warn if unit in data differs from `age_unit`,143,156,date_time,expect_snapshot,derive_var_age_years,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_atc.R,derive_vars_atc Test 1: ATC variables are merged properly,2,50,derive_vars,expect_dfs_equal,derive_vars_atc,2,todo,
+test-derive_vars_atc.R,derive_vars_atc Test 2: error if facm not unique,53,91,derive_vars,expect_snapshot,derive_vars_atc,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 1: Basic functionality without by_vars,2,47,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 2: Basic functionality with by_vars,50,94,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 3: Forgot to specify by_vars,97,129,derive_vars,expect_snapshot_warning,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 4: Error when dataset is not a dataframe,132,145,derive_vars,expect_error,derive_vars_cat,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 5: Error when definition is not an exprs object,148,183,derive_vars,expect_error,derive_vars_cat,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 6: Error when required columns are missing from dataset,186,226,derive_vars,expect_error,derive_vars_cat,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 7: Correct behavior when no conditions are met,229,289,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 8: Overlapping conditions handled correctly,292,354,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 9: Error when condition is missing from `definition`,358,395,derive_vars,expect_error,derive_vars_cat,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 10: Conditions for multiple VSTESTs (Height and Weight),398,460,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 11: Adding an extra variable (flag) to the dataset,463,523,derive_vars,expect_dfs_equal,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 12: Wrong input for by_vars,526,561,derive_vars,expect_error,derive_vars_cat,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_cat.R,derive_vars_cat Test 13: definition has wrong shape,564,597,derive_vars,expect_snapshot_error,derive_vars_cat,2,todo,
+test-derive_vars_cat.R,derive_vars_cat Test 14: two by_vars variables,600,637,derive_vars,expect_snapshot_error,derive_vars_cat,2,todo,
+test-derive_vars_computed.R,derive_vars_computed Test 1: new variable is derived correctly,3,50,derive_vars,expect_dfs_equal,derive_vars_computed,2,todo,
+test-derive_vars_computed.R,derive_vars_computed Test 2: no new variables added if filtered dataset is empty (non-existent value),53,92,derive_vars,expect_snapshot,derive_vars_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_computed.R,derive_vars_computed Test 3: no new variables are added if a parameter is missing,95,132,derive_vars,expect_snapshot,derive_vars_computed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_crit_flag.R,derive_vars_crit_flag Test 1: works with defaults,2,22,derive_vars,expect_dfs_equal,derive_vars_crit_flag,2,todo,
+test-derive_vars_crit_flag.R,derive_vars_crit_flag Test 2: create numeric flag,25,43,derive_vars,expect_dfs_equal,derive_vars_crit_flag,2,todo,
+test-derive_vars_crit_flag.R,derive_vars_crit_flag Test 3: using values Y and N,46,68,derive_vars,expect_dfs_equal,derive_vars_crit_flag,2,todo,
+test-derive_vars_crit_flag.R,derive_vars_crit_flag Test 4: error if invalid condition (var not in input),71,87,derive_vars,expect_snapshot,derive_vars_crit_flag,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_crit_flag.R,derive_vars_crit_flag Test 5: error if invalid description (PARAMCD not in input),90,111,derive_vars,expect_snapshot,derive_vars_crit_flag,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,impute_dtc_dt Test 1: default: no date imputation,3,22,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 2: impute month and day to first,25,63,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 3: impute day to last,66,91,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 4: impute month and day to last and preserve = TRUE,94,119,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 5: impute month and day to mid,123,147,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 6: min_dates argument works,150,183,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 7: max_dates argument works,186,219,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 8: min_dates_strict argument only works,222,255,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 9: min_dates and min_dates_strict arguments work,258,293,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 10: max_dates_strict argument only works,296,329,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 11: max_dates and max_dates_strict argument work,332,367,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 12: min_dates_strict argument works,370,394,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 13: max_dates_strict argument works,397,421,date_time,expect_equal,impute_dtc_dt,2,todo,
+test-derive_vars_dt.R,impute_dtc_dt Test 14: min_dates length mismatch provides error,424,445,date_time,expect_snapshot,impute_dtc_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,impute_dtc_dt Test 15: max_dates length mismatch provides error,448,469,date_time,expect_snapshot,impute_dtc_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,impute_dtc_dt Test 16: Error if null min/max_dates when highest_imputation = Y,472,488,date_time,expect_snapshot,impute_dtc_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,impute_dtc_dt Test 17: appropriate warnings/return object for impute_dtc_dt,491,507,date_time,expect_warning,impute_dtc_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,impute_dtc_dt Test 18: wrong input to `date_imputation`,510,579,date_time,expect_snapshot,impute_dtc_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,convert_dtc_to_dt Test 19: Convert a complete -- DTC into a date object,583,599,date_time,expect_equal,convert_dtc_to_dt,2,todo,
+test-derive_vars_dt.R,compute_dtf Test 20: compute DTF,604,646,date_time,expect_equal,compute_dtf,2,todo,
+test-derive_vars_dt.R,restrict_imputed_dtc_dt Test 21: restrict_imputed_dtc_dt works as expected,650,722,date_time,expect_equal,restrict_imputed_dtc_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 22: default behavior,727,758,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,"derive_vars_dt Test 23: no date imputation, add DTF",761,792,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,"derive_vars_dt Test 24: date imputed to first, auto DTF",795,827,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,"derive_vars_dt Test 25: date imputed to last, no DTF",830,863,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 26: highest_imputation = Y & max_dates,866,889,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 27: NA imputation for highest_imputation = Y & max_dates but date_imputation = first,892,909,date_time,expect_snapshot,derive_vars_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,derive_vars_dt Test 28: NA imputation for highest_imputation = Y & min_dates,911,934,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 29: Error for highest_imputation = Y & min_dates but date_imputation = last,937,954,date_time,expect_snapshot,derive_vars_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,derive_vars_dt Test 30: Error for highest_imputation = Y but null min/max dates fails,957,973,date_time,expect_snapshot,derive_vars_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,derive_vars_dt Test 31: Supplying both min/max dates for highest_imputation = Y works,976,1000,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 32: Supplying both min/max dates for highest_imputation = Y works,1003,1028,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 33: Supplying both min/max dates for highest_imputation = Y works,1031,1056,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,"derive_vars_dt Test 34: no date imputation, DTF present",1060,1086,date_time,expect_message,derive_vars_dt,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt.R,derive_vars_dt Test 35: correctly imputes last day in February on leap year,1089,1115,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 36: impute_dtc_dt where dtc is empty,1118,1127,date_time,expect_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt.R,derive_vars_dt Test 37: Test Min Date Equals Max Date,1130,1158,date_time,expect_dfs_equal,derive_vars_dt,2,todo,
+test-derive_vars_dt_dtm_utils.R,convert_date_to_dtm Test 1: Convert a complete -- DTC into a date time object,3,8,date_time,expect_equal,convert_date_to_dtm,2,todo,
+test-derive_vars_dt_dtm_utils.R,convert_date_to_dtm Test 2: Impute incomplete -- DTC into a date time object,11,16,date_time,expect_equal,convert_date_to_dtm,2,todo,
+test-derive_vars_dt_dtm_utils.R,convert_date_to_dtm Test 3: Convert -- DT into a date time object,19,24,date_time,expect_equal,convert_date_to_dtm,2,todo,
+test-derive_vars_dt_dtm_utils.R,convert_date_to_dtm Test 4: Keep -- DTM as the original date time object,27,32,date_time,expect_equal,convert_date_to_dtm,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_date Test 5: get correct target for missing dates,36,41,date_time,expect_equal,get_imputation_target_date,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_date Test 6: get correct target for missing dates,44,49,date_time,expect_equal,get_imputation_target_date,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_date Test 7: get correct target for missing dates,52,57,date_time,expect_equal,get_imputation_target_date,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_date Test 8: get correct target for missing dates,60,65,date_time,expect_equal,get_imputation_target_date,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_time Test 9: get correct target for missing times (first),69,74,date_time,expect_equal,get_imputation_target_time,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_time Test 10: get correct target for missing times (last),77,82,date_time,expect_equal,get_imputation_target_time,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_time Test 11: get correct target for missing times (time),85,90,date_time,expect_equal,get_imputation_target_time,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_target_time Test 12: get correct target for missing times (junk),93,98,date_time,expect_equal,get_imputation_target_time,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_dt_dtm_range Test 13: get_dt_dtm_range correctly imputes date ranges,102,159,date_time,expect_snapshot,get_dt_dtm_range,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt_dtm_utils.R,get_dt_dtm_range Test 14: lower_bounds,162,177,date_time,expect_equal,get_dt_dtm_range,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_dt_dtm_range Test 15: upper_bounds,180,195,date_time,expect_equal,get_dt_dtm_range,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_highest_imputation_level Test 16: correctly determine highest level,200,203,date_time,expect_equal,get_highest_imputation_level,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_imputation_targets Test 17: correctly generate imputation targets,207,279,date_time,expect_error,get_imputation_targets,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt_dtm_utils.R,adjust_last_day_imputation Test 18: correctly adjust last day imputation,284,302,date_time,expect_equal,adjust_last_day_imputation,2,todo,
+test-derive_vars_dt_dtm_utils.R,impute_date_time Test 19: correctly imputes missing values,306,313,date_time,expect_equal,impute_date_time,2,todo,
+test-derive_vars_dt_dtm_utils.R,impute_date_time Test 20: gives error if partial and target differ.,316,324,date_time,expect_error,impute_date_time,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt_dtm_utils.R,format_imputed_dtc Test 21: correctly format imputed date time,328,335,date_time,expect_equal,format_imputed_dtc,2,todo,
+test-derive_vars_dt_dtm_utils.R,propagate_na_values Test 22: correctly propagate NA values in DateTime,339,351,date_time,expect_equal,propagate_na_values,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 23: get_partialdatetime parses complete datetime,355,367,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 24: get_partialdatetime parses partial datetime,370,382,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 25: get_partialdatetime parses date-only input,385,397,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 26: get_partialdatetime parses year-only input,400,412,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 27: create_datetime = FALSE only returns date parts,415,424,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 28: handle partial date with missing components,427,439,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 29: handle partial datetime with some time components,442,454,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 30: handle completely missing components,457,469,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 31: handle empty string input,472,484,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,get_partialdatetime Test 32: handle NA input,487,499,date_time,expect_identical,get_partialdatetime,2,todo,
+test-derive_vars_dt_dtm_utils.R,is_partial_datetime Test 33: correctly identifies datetime and date partials,503,539,date_time,expect_snapshot,is_partial_datetime,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt_dtm_utils.R,assert_time_imputation Test 34: gives error when input not a valid format,543,551,date_time,expect_error,assert_time_imputation,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dt_dtm_utils.R,assert_dates_strict Test 35: no error if valid,555,568,date_time,expect_null,assert_dates_strict,2,todo,
+test-derive_vars_dt_dtm_utils.R,assert_dates_strict Test 36: error if invalid,571,580,date_time,expect_snapshot,assert_dates_strict,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 1: default: no date imputation, time part set to 00:00:00",3,29,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 2: no date imputation, min and sec imputed with 59",32,74,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 3: impute month and day to first, time to 00:00:00",77,120,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 4: impute day to last, time to 23:59:59",123,157,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 5: impute month, day to last, time to 23:59:59, preserve = TRUE",160,195,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 6: no date imputation, impute second to 59",198,233,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,"impute_dtc_dtm Test 7: impute month and day to mid, time to first",236,271,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 8: dtc is empty,274,283,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 9: min_dates argument works,286,307,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 10: max_dates argument works,310,324,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 11: min_dates_strict argument only works,327,348,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 12: min_dates and min_dates_strict arguments work,351,374,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 13: max_dates_strict argument only works,377,391,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 14: max_dates and max_dates_strict arguments work,394,410,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 15: max_dates_strict argument works,413,439,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 16: min_dates_strict argument works,442,468,date_time,expect_equal,impute_dtc_dtm,2,todo,
+test-derive_vars_dtm.R,impute_dtc_dtm Test 17: min_dates length mismatch provides error,471,483,date_time,expect_snapshot,impute_dtc_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,impute_dtc_dtm Test 18: max_dates length mismatch provides error,486,499,date_time,expect_snapshot,impute_dtc_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,impute_dtc_dtm Test 19: Error if null min/max_dates when highest_imputation = Y,502,510,date_time,expect_snapshot,impute_dtc_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,impute_dtc_dtm Test 20: wrong input to `date_imputation`,513,577,date_time,expect_snapshot,impute_dtc_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,convert_dtc_to_dtm Test 21: Convert a complete -- DTC into a date time object,581,586,date_time,expect_equal,convert_dtc_to_dtm,2,todo,
+test-derive_vars_dtm.R,compute_tmf Test 22: compute TMF,590,648,date_time,expect_equal,compute_tmf,2,todo,
+test-derive_vars_dtm.R,compute_tmf Test 23: throws ERROR when ignore_seconds_flag  = T and seconds are present,651,661,date_time,expect_snapshot,compute_tmf,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,compute_tmf Test 24: ignore_seconds_flag  = TRUE,664,675,date_time,expect_equal,compute_tmf,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 25: default behavior,680,716,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,"derive_vars_dtm Test 26: date imputed to first, auto DTF/TMF",719,755,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,"derive_vars_dtm Test 27: date and time imputed to last, no DTF/TMF",758,795,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,"derive_vars_dtm Test 28: date and time imputed to last, DTF only",798,835,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,"derive_vars_dtm Test 29: date imputed to MID, time to first, TMF only",838,876,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 30: No re-derivation is done if --DTF variable already exists,879,918,date_time,expect_snapshot,derive_vars_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,derive_vars_dtm Test 31: max_dates argument works as expected,921,944,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 32: NA imputation for highest_imputation = Y & max_dates,947,972,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 33: Error for highest_imputation = Y & max_dates but date_imputation = first,975,993,date_time,expect_snapshot,derive_vars_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,derive_vars_dtm Test 34: NA imputation for highest_imputation = Y & min_dates,996,1021,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 35: Error for highest_imputation = Y & min_dates but date_imputation = last,1024,1042,date_time,expect_snapshot,derive_vars_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,derive_vars_dtm Test 36: NA imputation for highest_imputation = Y but null min/max dates fails,1045,1062,date_time,expect_snapshot,derive_vars_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm.R,derive_vars_dtm Test 37: Supplying both min/max dates for highest_imputation = Y works,1065,1092,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 38: Supplying both min/max dates for highest_imputation = Y works,1095,1122,date_time,expect_dfs_equal,derive_vars_dtm,2,todo,
+test-derive_vars_dtm.R,derive_vars_dtm Test 39: catch ignore_seconds_flag error,1125,1146,date_time,expect_snapshot,derive_vars_dtm,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dtm_to_dt.R,derive_vars_dtm_to_dt Test 1: multiple variables,2,42,date_time,expect_dfs_equal,derive_vars_dtm_to_dt,2,todo,
+test-derive_vars_dtm_to_dt.R,derive_vars_dtm_to_dt Test 2: single variable,45,82,date_time,expect_dfs_equal,derive_vars_dtm_to_dt,2,todo,
+test-derive_vars_dtm_to_tm.R,derive_vars_dtm_to_tm Test 1: mutliple variables,2,46,date_time,expect_dfs_equal,derive_vars_dtm_to_tm,2,todo,
+test-derive_vars_dtm_to_tm.R,derive_vars_dtm_to_tm Test 2: single variable,49,90,date_time,expect_dfs_equal,derive_vars_dtm_to_tm,2,todo,
+test-derive_vars_duration.R,derive_vars_duration Test 1: Duration and unit variable are added,3,28,date_time,expect_dfs_equal,derive_vars_duration,2,todo,
+test-derive_vars_duration.R,derive_vars_duration Test 2: Duration and unit variable are added,31,55,date_time,expect_dfs_equal,derive_vars_duration,2,todo,
+test-derive_vars_duration.R,derive_vars_duration Test 3: Duration and unit variable are added,58,84,date_time,expect_dfs_equal,derive_vars_duration,2,todo,
+test-derive_vars_duration.R,derive_vars_duration Test 4: type argument works for interval,87,112,date_time,expect_dfs_equal,derive_vars_duration,2,todo,
+test-derive_vars_duration.R,derive_vars_duration Test 5: type argument works for duration,115,140,date_time,expect_dfs_equal,derive_vars_duration,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 1: Single --DT input when ref date is --DTM,2,32,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,"derive_vars_dy Test 2: DT input, ref date DTM, DY var specified",35,72,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 3: Combo of --DT/--DTM input when ref date is --DTM,75,106,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 4: Single --DT input when ref date is --DT,109,138,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 5: Multiple --DT input when ref date is --DT,141,172,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 6: Combo of --DT/--DTM input when ref date is --DT,175,206,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 7: All dates as --DTM,209,240,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 8: error if source variables do not end in DT or DTM,243,256,date_time,expect_snapshot,derive_vars_dy,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_dy.R,derive_vars_dy Test 9: Single named --DT input when ref date is --DTM,259,288,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_dy.R,derive_vars_dy Test 10: no error if input with variable end with `_temp`,291,320,date_time,expect_dfs_equal,derive_vars_dy,2,todo,
+test-derive_vars_extreme_event.R,derive_vars_extreme_event Test 1: derive_vars_extreme_event,2,48,derive_vars,expect_dfs_equal,derive_vars_extreme_event,2,todo,
+test-derive_vars_joined_summary.R,derive_vars_joined_summary Test 1: summing up values up to current record,2,39,derive_vars,expect_dfs_equal,derive_vars_joined_summary,2,todo,
+test-derive_vars_joined_summary.R,derive_vars_joined_summary Test 2: missing_values works,41,77,derive_vars,expect_dfs_equal,derive_vars_joined_summary,2,todo,
+test-derive_vars_joined_summary.R,derive_vars_joined_summary Test 3: error if new variable in input dataset,80,111,derive_vars,expect_snapshot,derive_vars_joined_summary,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_query.R,derive_vars_query Test 1: Derive CQ and SMQ variables with two term levels,3,37,derive_vars,expect_dfs_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 2: Derive when no unique key excluding `SRCVAR` columns,40,66,derive_vars,expect_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 3: Derive when an adverse event is in multiple baskets,69,95,derive_vars,expect_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 4: Derive when no GRPID or SCOPE column,99,125,derive_vars,expect_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 5: Derive decides between TERMCHAR and TERMNUM based on type,128,157,derive_vars,expect_snapshot,derive_vars_query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_query.R,derive_vars_query Test 6: Error is given if both TERMCHAR/TERMNUM are NA/empty,160,178,derive_vars,expect_snapshot,derive_vars_query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_query.R,derive_vars_query Test 7: character SRCVAR and just TERMCHAR is provided,181,203,derive_vars,expect_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 8: numeric SRCVAR and just TERMNUM is provided,206,229,derive_vars,expect_equal,derive_vars_query,2,todo,
+test-derive_vars_query.R,derive_vars_query Test 9: Error if requested variables already exist,232,252,derive_vars,expect_snapshot,derive_vars_query,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_query.R,get_vars_query Test 10: Derive when no unique key columns,256,279,derive_vars,expect_equal,get_vars_query,2,todo,
+test-derive_vars_query.R,assert_valid_queries Test 11: assert_valid_queries checks,283,377,derive_vars,expect_snapshot,assert_valid_queries,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_transposed.R,derive_vars_transposed Test 1: the merge dataset is transposed and merged correctly,2,30,derive_vars,expect_dfs_equal,derive_vars_transposed,2,todo,
+test-derive_vars_transposed.R,derive_vars_transposed Test 2: filtering the merge dataset works,34,62,derive_vars,expect_dfs_equal,derive_vars_transposed,2,todo,
+test-derive_vars_transposed.R,derive_vars_transposed Test 3: filter merge dataset 'many-to-one',65,90,derive_vars,expect_snapshot,derive_vars_transposed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-derive_vars_transposed.R,derive_vars_transposed Test 4: error if `relationship` is unexpected,93,149,derive_vars,expect_snapshot,derive_vars_transposed,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-dt_level.R,dt_level Test 1: input is none; n,2,7,date_time,expect_equal,dt_level,1,todo,
+test-dt_level.R,dt_level Test 2: input is day; D,10,15,date_time,expect_equal,dt_level,1,todo,
+test-dt_level.R,dt_level Test 3: input is month; M,18,23,date_time,expect_equal,dt_level,1,todo,
+test-dt_level.R,dt_level Test 4: input is year; Y,26,31,date_time,expect_equal,dt_level,1,todo,
+test-dt_level.R,dt_level Test 5: input is not scalar,34,38,date_time,expect_snapshot,dt_level,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-dt_level.R,dt_level Test 6: input is scalar character but not in expected set,41,45,date_time,expect_snapshot,dt_level,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-duplicates.R,extract_duplicate_records Test 1: duplicate records are extracted,3,19,core_infrastructure,expect_equal,extract_duplicate_records,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-duplicates.R,extract_duplicate_records Test 2: duplicate records for all variables,22,38,core_infrastructure,expect_equal,extract_duplicate_records,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-duplicates.R,signal_duplicate_records Test 3: dataset of duplicate records can be accessed using `get_duplicates_dataset()`,43,64,core_infrastructure,expect_snapshot,signal_duplicate_records,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-event.R,event Test 1: Cover event$order,2,75,core_infrastructure,expect_dfs_equal,event,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-filter_exist.R,filter_exist Test 1: filter_exist() works as expected,3,32,record_filter_dataset_creation,expect_equal,filter_exist,2,todo,
+test-filter_exist.R,filter_not_exist Test 2: filter_not_exist() works as expected,36,65,record_filter_dataset_creation,expect_equal,filter_not_exist,2,todo,
+test-filter_extreme.R,first observation for each group are selected,1,31,record_filter_dataset_creation,expect_dfs_equal,filter_extreme,2,todo,
+test-filter_extreme.R,first observation is selected without grouping,33,59,record_filter_dataset_creation,expect_dfs_equal,filter_extreme,2,todo,
+test-filter_joined.R,filter_joined Test 1: filter without first_cond_upper,3,46,record_filter_dataset_creation,expect_dfs_equal,filter_joined,2,todo,
+test-filter_joined.R,filter_joined Test 2: filter with first_cond,49,91,record_filter_dataset_creation,expect_dfs_equal,filter_joined,2,todo,
+test-filter_joined.R,filter_joined Test 3: filter with first_cond and summary function,94,136,record_filter_dataset_creation,expect_dfs_equal,filter_joined,2,todo,
+test-filter_joined.R,filter_joined Test 4: join_type = 'all',139,174,record_filter_dataset_creation,expect_dfs_equal,filter_joined,2,todo,
+test-filter_joined.R,min_cond Test 7: minimum is derived correctly,178,212,record_filter_dataset_creation,expect_dfs_equal,min_cond,2,todo,
+test-filter_joined.R,max_cond Test 8: maximum is derived correctly,216,250,record_filter_dataset_creation,expect_dfs_equal,max_cond,2,todo,
+test-filter_relative.R,"filter_relative Test 1: mode = first, selection = before, inclusive = TRUE",3,52,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 2: mode = first, selection = before, inclusive = FALSE",55,96,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 3: mode = first, selection = after, inclusive = TRUE",99,144,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 4: mode = first, selection = after, inclusive = FALSE",147,195,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 5: mode = last, selection = before, inclusive = TRUE",198,247,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 6: mode = last, selection = before, inclusive = FALSE",250,295,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 7: mode = last, selection = after, inclusive = TRUE",298,345,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-filter_relative.R,"filter_relative Test 8: mode = last, selection = after, inclusive = FALSE",348,391,record_filter_dataset_creation,expect_dfs_equal,filter_relative,2,todo,
+test-get_flagged_records.R,get_flagged_records Test 1: generate existence flag,3,26,record_filter_dataset_creation,expect_dfs_equal,get_flagged_records,2,todo,
+test-get_flagged_records.R,get_flagged_records Test 2: test filter argument,29,55,record_filter_dataset_creation,expect_dfs_equal,get_flagged_records,2,todo,
+test-get_flagged_records.R,get_flagged_records Test 3: test missing values,58,81,record_filter_dataset_creation,expect_dfs_equal,get_flagged_records,2,todo,
+test-get_summary_records.R,get_summary_records Test 1: deprecation error if function is called,3,12,record_filter_dataset_creation,expect_error,get_summary_records,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-period_dataset.R,create_period_dataset Test 1: periods,3,40,core_infrastructure,expect_dfs_equal,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,create_period_dataset Test 2: phases,43,76,core_infrastructure,expect_dfs_equal,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,create_period_dataset Test 3: subperiods,79,115,core_infrastructure,expect_dfs_equal,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,create_period_dataset Test 4: error if no period/phase variable on RHS,118,138,core_infrastructure,expect_snapshot,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,create_period_dataset Test 5: error if different type of RHSs,141,161,core_infrastructure,expect_snapshot,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,create_period_dataset Test 6: error if RHS variable not in input dataset,164,184,core_infrastructure,expect_snapshot,create_period_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 7: periods,188,228,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 8: phases,231,267,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 9: subperiods,270,309,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 10: error if no period/phase variable on LHS,311,335,core_infrastructure,expect_snapshot,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 11: error if different type of LHSs,338,362,core_infrastructure,expect_snapshot,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,"create_period_dataset Test 12: DT and DTM columns exist, pulls only one unique col",365,400,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 13: periods,403,441,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-period_dataset.R,derive_vars_period Test 14: periods variable derived when only one variable needed,444,482,core_infrastructure,expect_dfs_equal,derive_vars_period,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-restrict_derivation.R,restrict_derivation Test 1: restrict derivation with parameters,3,30,core_infrastructure,expect_dfs_equal,restrict_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-restrict_derivation.R,restrict_derivation Test 2: restrict derivation without parameters,33,57,core_infrastructure,expect_dfs_equal,restrict_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-restrict_derivation.R,restrict_derivation Test 3: access functions from the parent environment,60,84,core_infrastructure,expect_silent,restrict_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-restrict_derivation.R,restrict_derivation Test 4: allow dplyr functions,87,114,core_infrastructure,expect_dfs_equal,restrict_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 1: slice derivation,3,39,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 2: non matching observations,42,73,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 3: empty slice,76,111,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 4: slice without arguments,114,149,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 5: calling it in a function,152,196,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 6: slice on 0-row dataset,199,233,core_infrastructure,expect_identical,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 7: Error if a mandatory argument is not in arg or all slices,236,261,core_infrastructure,expect_snapshot,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-slice_derivation.R,slice_derivation Test 8: args = NULL works,264,293,core_infrastructure,expect_dfs_equal,slice_derivation,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-transform_range.R,transform_range Test 1: works as expected,2,11,compute,expect_equal,transform_range,1,todo,
+test-transform_range.R,transform_range Test 2: range is flipped if flip_direction == TRUE,14,24,compute,expect_equal,transform_range,1,todo,
+test-transform_range.R,transform_range Test 3: warning if outside range,27,36,compute,expect_snapshot,transform_range,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-transform_range.R,transform_range Test 4: error if outside range,39,49,compute,expect_snapshot,transform_range,3,todo,Assert error/warning flag and message text; not an exact snapshot port
+test-user_helpers.R,list_all_templates Test 1: all templates are listed,3,12,core_infrastructure,expect_equal,list_all_templates,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,list_all_templates Test 2: Error Message is returned if package is not installed,15,20,core_infrastructure,expect_snapshot,list_all_templates,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,use_ad_template Test 3: package templates can be used,24,35,core_infrastructure,expect_identical,use_ad_template,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,use_ad_template Test 4: Error Message is returned if no ADaM template is available,38,45,core_infrastructure,expect_snapshot,use_ad_template,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,use_ad_template Test 5: error if ADaM template file already exists,48,61,core_infrastructure,expect_error,use_ad_template,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,admiral_labels_attrs_section Test 6: outputs ## heading and expected content,65,72,core_infrastructure,expect_true,admiral_labels_attrs_section,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,print.adam_templates Test 7: no templates,76,82,core_infrastructure,expect_identical,print.adam_templates,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_helpers.R,print.adam_templates Test 8: some templates,85,94,core_infrastructure,expect_identical,print.adam_templates,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_blanks_to_na Test 1: blank strings are turned into `NA`,3,8,core_infrastructure,expect_identical,convert_blanks_to_na,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_blanks_to_na Test 2: attributes are preserved when converting blanks to `NA`,11,18,core_infrastructure,expect_identical,convert_blanks_to_na,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_blanks_to_na Test 3: blank strings are turned into `NA` inside data frames,21,47,core_infrastructure,expect_identical,convert_blanks_to_na,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_blanks_to_na.list Test 4: `convert_blanks_to_na.list` produces a lists,51,57,core_infrastructure,expect_equal,convert_blanks_to_na.list,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_na_to_blanks Test 5: `NA` strings are turned into blank ,61,66,core_infrastructure,expect_identical,convert_na_to_blanks,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_na_to_blanks Test 6: attributes are preserved when converting `NA` to blanks,69,76,core_infrastructure,expect_identical,convert_na_to_blanks,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_na_to_blanks.data.frame Test 7: `NA` are turned into blank strings inside data frames,80,106,core_infrastructure,expect_equal,convert_na_to_blanks.data.frame,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,convert_na_to_blanks.list Test 8: `convert_na_to_blanks.list` produces a lists,110,116,core_infrastructure,expect_equal,convert_na_to_blanks.list,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,negate_vars Test 9: negate_vars returns list of negated variables,120,122,core_infrastructure,expect_identical,negate_vars,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,negate_vars Test 10: negate_vars returns NULL if input is NULL,125,127,core_infrastructure,expect_identical,negate_vars,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,get_one_to_many_dataset Test 11: returns a data frame after a previous error,131,135,core_infrastructure,expect_true,get_one_to_many_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,get_many_to_one_dataset Test 12: returns a data frame after a previous error,139,143,core_infrastructure,expect_true,get_many_to_one_dataset,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print.source Test 13: `source` objects are printed as intended,147,160,core_infrastructure,expect_snapshot,print.source,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print.source Test 14: `source` objects containing `source` objects,163,177,core_infrastructure,expect_identical,print.source,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print.source Test 15: `source` objects containing `data.frame`,180,211,core_infrastructure,expect_identical,print.source,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print_named_list Test 16: named list,215,223,core_infrastructure,expect_identical,print_named_list,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print_named_list Test 17: unnamed list,226,234,core_infrastructure,expect_identical,print_named_list,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
+test-user_utils.R,print_named_list Test 18: named list with unamed list,237,244,core_infrastructure,expect_snapshot,print_named_list,3,needs_review,R-specific (S3/exprs/function arguments); may be n/a in SAS
