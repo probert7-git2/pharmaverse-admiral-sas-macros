@@ -10,27 +10,27 @@
 /* Map a time-unit token to seconds. Writes _secs. */
 %macro m_tti_unit_secs(unitvar=);
   _uu = lowcase(strip(&unitvar));
-  if _uu in ('year', 'years', 'yr', 'yrs', 'y') then _secs = 86400 * 365.25;
-  else if _uu in ('month', 'months', 'mo', 'mos') then _secs = 86400 * 365.25 / 12;
-  else if _uu in ('week', 'weeks', 'wk', 'wks', 'w') then _secs = 86400 * 7;
-  else if _uu in ('day', 'days', 'd') then _secs = 86400;
-  else if _uu in ('hour', 'hours', 'hr', 'hrs', 'h') then _secs = 3600;
-  else if _uu in ('minute', 'minutes', 'min', 'mins') then _secs = 60;
+  if _uu in ('year', 'years', 'yr', 'yrs', 'y')            then _secs = 86400 * 365.25;
+  else if _uu in ('month', 'months', 'mo', 'mos')          then _secs = 86400 * 365.25 / 12;
+  else if _uu in ('week', 'weeks', 'wk', 'wks', 'w')       then _secs = 86400 * 7;
+  else if _uu in ('day', 'days', 'd')                      then _secs = 86400;
+  else if _uu in ('hour', 'hours', 'hr', 'hrs', 'h')       then _secs = 3600;
+  else if _uu in ('minute', 'minutes', 'min', 'mins')      then _secs = 60;
   else if _uu in ('second', 'seconds', 'sec', 'secs', 's') then _secs = 1;
-  else _secs = .;
+  else                                                          _secs = .;
 %mend m_tti_unit_secs;
 
 /* Canonical unit name in _canon from _uu. */
 %macro m_tti_unit_canon(unitvar=, outvar=);
   _uu = lowcase(strip(&unitvar));
-  if _uu in ('year', 'years', 'yr', 'yrs', 'y') then &outvar = 'years';
-  else if _uu in ('month', 'months', 'mo', 'mos') then &outvar = 'months';
-  else if _uu in ('week', 'weeks', 'wk', 'wks', 'w') then &outvar = 'weeks';
-  else if _uu in ('day', 'days', 'd') then &outvar = 'days';
-  else if _uu in ('hour', 'hours', 'hr', 'hrs', 'h') then &outvar = 'hours';
-  else if _uu in ('minute', 'minutes', 'min', 'mins') then &outvar = 'minutes';
+  if _uu in ('year', 'years', 'yr', 'yrs', 'y')            then &outvar = 'years';
+  else if _uu in ('month', 'months', 'mo', 'mos')          then &outvar = 'months';
+  else if _uu in ('week', 'weeks', 'wk', 'wks', 'w')       then &outvar = 'weeks';
+  else if _uu in ('day', 'days', 'd')                      then &outvar = 'days';
+  else if _uu in ('hour', 'hours', 'hr', 'hrs', 'h')       then &outvar = 'hours';
+  else if _uu in ('minute', 'minutes', 'min', 'mins')      then &outvar = 'minutes';
   else if _uu in ('second', 'seconds', 'sec', 'secs', 's') then &outvar = 'seconds';
-  else &outvar = _uu;
+  else                                                          &outvar = _uu;
 %mend m_tti_unit_canon;
 
 /*
@@ -64,18 +64,18 @@
   _type_c = lowcase(strip(_type));
 
   if _floor_in and not missing(_s) then do;
-    if _in_c = 'years' then _s = dhms(intnx('year', datepart(_s), 0, 'b'), 0, 0, 0);
-    else if _in_c = 'months' then _s = dhms(intnx('month', datepart(_s), 0, 'b'), 0, 0, 0);
-    else if _in_c = 'days' then _s = dhms(datepart(_s), 0, 0, 0);
-    else if _in_c = 'hours' then _s = intnx('dthour', _s, 0, 'b');
+    if _in_c = 'years'        then _s = dhms(intnx('year', datepart(_s), 0, 'b'), 0, 0, 0);
+    else if _in_c = 'months'  then _s = dhms(intnx('month', datepart(_s), 0, 'b'), 0, 0, 0);
+    else if _in_c = 'days'    then _s = dhms(datepart(_s), 0, 0, 0);
+    else if _in_c = 'hours'   then _s = intnx('dthour', _s, 0, 'b');
     else if _in_c = 'minutes' then _s = intnx('dtminute', _s, 0, 'b');
     else if _in_c = 'seconds' then _s = intnx('dtsecond', _s, 0, 'b');
   end;
   if _floor_in and not missing(_e) then do;
-    if _in_c = 'years' then _e = dhms(intnx('year', datepart(_e), 0, 'b'), 0, 0, 0);
-    else if _in_c = 'months' then _e = dhms(intnx('month', datepart(_e), 0, 'b'), 0, 0, 0);
-    else if _in_c = 'days' then _e = dhms(datepart(_e), 0, 0, 0);
-    else if _in_c = 'hours' then _e = intnx('dthour', _e, 0, 'b');
+    if _in_c = 'years'        then _e = dhms(intnx('year', datepart(_e), 0, 'b'), 0, 0, 0);
+    else if _in_c = 'months'  then _e = dhms(intnx('month', datepart(_e), 0, 'b'), 0, 0, 0);
+    else if _in_c = 'days'    then _e = dhms(datepart(_e), 0, 0, 0);
+    else if _in_c = 'hours'   then _e = intnx('dthour', _e, 0, 'b');
     else if _in_c = 'minutes' then _e = intnx('dtminute', _e, 0, 'b');
     else if _in_c = 'seconds' then _e = intnx('dtsecond', _e, 0, 'b');
   end;
@@ -222,14 +222,14 @@
     _x = A1HI; %m_tti_signif; _a1hi = _sig;
   end;
   /* Missing bounds stay missing. SAS treats . as smaller than every number. */
-  if not missing(_av) and not missing(_lo) and missing(_hi) and _av >= _lo then ANRIND = 'NORMAL';
+  if      not missing(_av) and not missing(_lo) and missing(_hi) and _av >= _lo then ANRIND = 'NORMAL';
   else if not missing(_av) and not missing(_hi) and missing(_lo) and _av <= _hi then ANRIND = 'NORMAL';
   else if not missing(_av) and not missing(_lo) and not missing(_hi) and _av >= _lo and _av <= _hi then ANRIND = 'NORMAL';
-  else if _use_a1 and not missing(_av) and not missing(_lo) and _av < _lo and (missing(A1LO) or _av >= _a1lo) then ANRIND = 'LOW';
+  else if     _use_a1 and not missing(_av) and not missing(_lo) and _av < _lo and (missing(A1LO) or _av >= _a1lo) then ANRIND = 'LOW';
   else if not _use_a1 and not missing(_av) and not missing(_lo) and _av < _lo then ANRIND = 'LOW';
-  else if _use_a1 and not missing(_av) and not missing(_hi) and _av > _hi and (missing(A1HI) or _av <= _a1hi) then ANRIND = 'HIGH';
+  else if     _use_a1 and not missing(_av) and not missing(_hi) and _av > _hi and (missing(A1HI) or _av <= _a1hi) then ANRIND = 'HIGH';
   else if not _use_a1 and not missing(_av) and not missing(_hi) and _av > _hi then ANRIND = 'HIGH';
-  else if _use_a1 and not missing(_av) and not missing(_a1lo) and _av < _a1lo then ANRIND = 'LOW LOW';
-  else if _use_a1 and not missing(_av) and not missing(_a1hi) and _av > _a1hi then ANRIND = 'HIGH HIGH';
+  else if     _use_a1 and not missing(_av) and not missing(_a1lo) and _av < _a1lo then ANRIND = 'LOW LOW';
+  else if     _use_a1 and not missing(_av) and not missing(_a1hi) and _av > _a1hi then ANRIND = 'HIGH HIGH';
   else ANRIND = '';
 %mend m_tti_anrind;
